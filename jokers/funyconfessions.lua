@@ -29,10 +29,10 @@ SMODS.Joker{ --FunyConfessions
         }
     },
     pos = {
-        x = 6,
+        x = 7,
         y = 2
     },
-    cost = 6,
+    cost = 7,
     rarity = 2,
     blueprint_compat = false,
     eternal_compat = true,

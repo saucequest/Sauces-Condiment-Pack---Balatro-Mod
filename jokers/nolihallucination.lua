@@ -19,8 +19,8 @@ SMODS.Joker{ --Noli?
         }
     },
     pos = {
-        x = 9,
-        y = 0
+        x = 0,
+        y = 1
     },
     cost = 6,
     rarity = "sauce_hallucination",

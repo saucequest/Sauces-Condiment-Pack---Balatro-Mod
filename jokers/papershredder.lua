@@ -14,7 +14,7 @@ SMODS.Joker{ --Paper Shredder
         }
     },
     pos = {
-        x = 6,
+        x = 7,
         y = 0
     },
     cost = 1,

@@ -16,7 +16,7 @@ SMODS.Joker{ --Let There Be Light
         }
     },
     pos = {
-        x = 1,
+        x = 2,
         y = 1
     },
     cost = 8,

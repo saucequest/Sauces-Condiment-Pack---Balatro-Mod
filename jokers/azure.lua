@@ -19,8 +19,8 @@ SMODS.Joker{ --Azure
         }
     },
     pos = {
-        x = 9,
-        y = 1
+        x = 0,
+        y = 2
     },
     cost = 9,
     rarity = 3,

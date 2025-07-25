@@ -24,11 +24,11 @@ SMODS.Joker{ --RandomClover
         }
     },
     pos = {
-        x = 7,
+        x = 8,
         y = 0
     },
     cost = 8,
-    rarity = 1,
+    rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
     unlocked = true,

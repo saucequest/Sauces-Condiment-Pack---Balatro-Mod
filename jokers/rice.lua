@@ -13,7 +13,7 @@ SMODS.Joker{ --Rice
         }
     },
     pos = {
-        x = 1,
+        x = 2,
         y = 2
     },
     cost = 3,
@@ -24,7 +24,7 @@ SMODS.Joker{ --Rice
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 2,
+        x = 3,
         y = 2
     },
 

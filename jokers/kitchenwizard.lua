@@ -18,7 +18,7 @@ SMODS.Joker{ --Kitchen Wizard
         }
     },
     pos = {
-        x = 0,
+        x = 1,
         y = 2
     },
     cost = 5,

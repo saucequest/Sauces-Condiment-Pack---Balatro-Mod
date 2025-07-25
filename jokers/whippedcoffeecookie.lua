@@ -10,7 +10,7 @@ SMODS.Joker{ --Whipped Coffee Cookie
         ['name'] = 'Whipped Coffee Cookie',
         ['text'] = {
             [1] = 'Prevents death, but sets your money to {C:money}$0{} when preventing',
-            [2] = 'When a Boss Blind is {C:red}defeated{}, adds a random card to deck',
+            [2] = 'When a Blind is defeated, adds a random card to deck',
             [3] = '{C:inactive}\"Should I check my notifications?\"{}',
             [4] = '{C:inactive}Originates from{} {C:gold}Comic Studio{}'
         }
@@ -57,7 +57,7 @@ SMODS.Joker{ --Whipped Coffee Cookie
                         }
                 }
         end
-        if context.end_of_round and context.main_eval and G.GAME.blind.boss and not context.blueprint then
+        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
                 local card_front = pseudorandom_element(G.P_CARDS, pseudoseed('add_card'))
             local new_card = create_playing_card({
                 front = card_front,
@@ -82,7 +82,7 @@ SMODS.Joker{ --Whipped Coffee Cookie
                 draw_card(G.play, G.deck, 90, 'up')
                 SMODS.calculate_context({ playing_card_added = true, cards = { new_card } })
             end,
-                    message = "Here, have an update!"
+                    message = "Should I check my notifications?"
                 }
         end
     end

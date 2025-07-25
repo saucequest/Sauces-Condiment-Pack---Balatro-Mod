@@ -16,7 +16,7 @@ SMODS.Joker{ --FLOWERS
         }
     },
     pos = {
-        x = 3,
+        x = 4,
         y = 2
     },
     cost = 55,
@@ -87,3 +87,16 @@ SMODS.Joker{ --FLOWERS
         SMODS.change_free_rerolls(-99)
     end
 }
+
+
+local card_set_cost_ref = Card.set_cost
+function Card:set_cost()
+    card_set_cost_ref(self)
+    
+    if next(SMODS.find_card("j_sauce_flowers")) then
+        if (self.ability.set == 'Joker' or self.ability.set == 'Tarot' or self.ability.set == 'Planet' or self.ability.set == 'Spectral' or self.ability.set == 'Enhanced' or self.ability.set == 'Booster' or self.ability.set == 'Voucher') then self.cost = math.max(0, math.floor(self.cost * (1 - 80 / 100))) end
+    end
+    
+    self.sell_cost = math.max(1, math.floor(self.cost / 2)) + (self.ability.extra_value or 0)
+    self.sell_cost_label = self.facing == 'back' and '?' or self.sell_cost
+end

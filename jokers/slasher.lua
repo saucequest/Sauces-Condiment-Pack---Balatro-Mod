@@ -4,18 +4,18 @@ SMODS.Joker{ --Slasher
     config = {
         extra = {
             xchips = 1.5,
-            dollars = 6
+            dollars = 3
         }
     },
     loc_txt = {
         ['name'] = 'Slasher',
         ['text'] = {
             [1] = '{X:chips,C:white}x1.5 {} Chips',
-            [2] = '{C:money}-$6{} every time you discard a hand'
+            [2] = '{C:money}-$3{} every time you discard a hand'
         }
     },
     pos = {
-        x = 0,
+        x = 1,
         y = 1
     },
     cost = 6,

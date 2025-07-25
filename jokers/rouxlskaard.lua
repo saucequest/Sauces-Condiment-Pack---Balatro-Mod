@@ -27,6 +27,10 @@ SMODS.Joker{ --Rouxls Kaard
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    soul_pos = {
+        x = 6,
+        y = 0
+    },
 
     calculate = function(self, card, context)
         if context.setting_blind and not context.blueprint then
