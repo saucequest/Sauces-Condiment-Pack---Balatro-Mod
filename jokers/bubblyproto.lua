@@ -3,8 +3,8 @@ SMODS.Joker{ --bubblyproto
     key = "bubblyproto",
     config = {
         extra = {
-            odds = 2,
-            odds2 = 4,
+            odds = 4,
+            odds2 = 6,
             xchips = 2,
             xchips2 = 0.1
         }
@@ -12,8 +12,8 @@ SMODS.Joker{ --bubblyproto
     loc_txt = {
         ['name'] = 'bubblyproto',
         ['text'] = {
-            [1] = '{C:green}1 in 2{} chance for {X:blue,C:white}x2{} Chips',
-            [2] = '{C:green}1 in 4{} chance for {X:blue,C:white}x0.1{} Chips',
+            [1] = '{C:green}1 in 4{} chance for {X:blue,C:white}x2{} Chips',
+            [2] = '{C:green}1 in 6{} chance for {X:blue,C:white}x0.1{} Chips',
             [3] = '{C:inactive}\"professional cs funnyman\"{}',
             [4] = '{C:inactive}Originates from{} {C:money}Comic Studio{}',
             [5] = '{C:dark_edition}Follower-suggested{}'

@@ -14,7 +14,7 @@ SMODS.Joker{ --Noli
         ['text'] = {
             [1] = '{X:chips,C:white}x2.010{} Chips',
             [2] = '{C:green}1 in 4{} chance for {X:red,C:white}X0.8{} Mult',
-            [3] = 'Creates a {C:spectral}Negative {}Hallucination Noli when hand played',
+            [3] = 'Creates a {C:dark_edition}Negative {}Hallucination Noli when hand played',
             [4] = '',
             [5] = '{C:inactive}\"This thing of darkness I acknowledge mine.\"{}',
             [6] = '{C:inactive}Originates from{} {C:spades}FORSAKEN{}'
