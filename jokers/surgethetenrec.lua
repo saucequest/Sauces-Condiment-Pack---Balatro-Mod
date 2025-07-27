@@ -11,7 +11,9 @@ SMODS.Joker{ --Surge the Tenrec
         ['text'] = {
             [1] = 'All cards played will be turned into {C:money}Mult{} Cards',
             [2] = '{X:chips,C:white}x1.4{} Chips',
-            [3] = 'All cards discarded will be {C:hearts}destroyed{}'
+            [3] = 'All cards discarded will be {C:hearts}destroyed{}',
+            [4] = '{C:inactive}\"We\'re taking over whether you like it or not!\"{}',
+            [5] = '{C:inactive}Originates from {}{C:spectral}Sonic the Hedgehog{}'
         }
     },
     pos = {

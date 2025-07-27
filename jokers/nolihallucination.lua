@@ -31,7 +31,7 @@ SMODS.Joker{ --Noli?
     atlas = 'CustomJokers',
 
     in_pool = function(self, args)
-        return false
+        return args.source ~= 'sho'
     end,
 
     set_ability = function(self, card, initial)
