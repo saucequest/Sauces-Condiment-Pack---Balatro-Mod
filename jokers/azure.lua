@@ -1,10 +1,8 @@
 SMODS.Joker{ --Azure
-    name = "Azure",
     key = "azure",
     config = {
         extra = {
-            dollars = 3,
-            j_joker = 0
+            dollars = 3
         }
     },
     loc_txt = {
@@ -19,24 +17,25 @@ SMODS.Joker{ --Azure
         }
     },
     pos = {
-        x = 0,
-        y = 2
+        x = 3,
+        y = 0
     },
     cost = 9,
     rarity = 3,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.remove_playing_cards and not context.blueprint then
+        if context.remove_playing_cards  then
                 return {
                     dollars = -card.ability.extra.dollars
                 }
         end
-        if context.end_of_round and context.main_eval and G.GAME.blind.boss and not context.blueprint then
+        if context.end_of_round and context.main_eval and G.GAME.blind.boss  then
                 return {
                     func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
@@ -60,17 +59,21 @@ SMODS.Joker{ --Azure
                     extra = {
                         func = function()
             local created_joker = false
-                if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-                    created_joker = true
-                    G.GAME.joker_buffer = G.GAME.joker_buffer + 1
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            SMODS.add_card({ set = 'Joker', rarity = 'Rare' })
-                            G.GAME.joker_buffer = 0
-                            return true
-                        end
-                    }))
+    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
+        created_joker = true
+        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    local joker_card = SMODS.add_card({ set = 'Joker', rarity = 'Rare' })
+                    if joker_card then
+                        
+                        
+                    end
+                    G.GAME.joker_buffer = 0
+                    return true
                 end
+            }))
+            end
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end

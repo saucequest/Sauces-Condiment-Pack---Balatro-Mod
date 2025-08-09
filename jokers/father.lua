@@ -1,5 +1,4 @@
 SMODS.Joker{ --Father
-    name = "Father",
     key = "father",
     config = {
         extra = {
@@ -11,28 +10,32 @@ SMODS.Joker{ --Father
     loc_txt = {
         ['name'] = 'Father',
         ['text'] = {
-            [1] = 'do,,n,,t yo,u w,,a, nt to pla,,,y, w,ith,, yo,,u,r fri,,end,,s j,,ac,ob,?',
-            [2] = '{C:inactive}Originates from{} {C:hearts}CDarchives{}'
+            [1] = 'Creates a {C:attention}Red{} Seal card whenever a card is destroyed',
+            [2] = 'Adds a {C:dark_edition}Negative {}{C:attention}Red{} Seal {C:attention}Glass{} Card when a card is bought (including itself)',
+            [3] = 'When the first hand is drawn, adds 2 {C:dark_edition}Negative {}consumables',
+            [4] = '{C:inactive}\"do,,n,,t yo,u w,,a, nt to pla,,,y, w,ith,, yo,,u,r fri,,end,,s j,,ac,ob,?\"{}',
+            [5] = '{C:inactive}Originates from{} {C:hearts}CDarchives{}'
         }
     },
     pos = {
-        x = 0,
-        y = 3
+        x = 3,
+        y = 1
     },
     cost = 35,
     rarity = "sauce_unnatural",
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 1,
-        y = 3
+        x = 4,
+        y = 1
     },
 
     calculate = function(self, card, context)
-        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers and not context.blueprint then
+        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
                 return {
                     func = function()
                 local card_front = pseudorandom_element(G.P_CARDS, pseudoseed('add_card_hand'))
@@ -59,7 +62,7 @@ SMODS.Joker{ --Father
                     message = "PEE,KA,BOO,,!"
                 }
         end
-        if context.buying_card and not context.blueprint then
+        if context.buying_card  then
                 return {
                     func = function()
                 local card_front = pseudorandom_element(G.P_CARDS, pseudoseed('add_card_hand'))
@@ -86,7 +89,7 @@ SMODS.Joker{ --Father
                     message = "PEE,KA,BOO,,!"
                 }
         end
-        if context.selling_self and not context.blueprint then
+        if context.selling_self  then
                 local target_card = context.other_card
                 return {
                     func = function()
@@ -121,7 +124,7 @@ SMODS.Joker{ --Father
                         }
                 }
         end
-        if context.first_hand_drawn and not context.blueprint then
+        if context.first_hand_drawn  then
                 return {
                     func = function()local created_consumable = true
                 G.E_MANAGER:add_event(Event({
@@ -160,7 +163,7 @@ SMODS.Joker{ --Father
                         }
                 }
         end
-        if context.remove_playing_cards and not context.blueprint then
+        if context.remove_playing_cards  then
                 return {
                     func = function()
                 local card_front = pseudorandom_element(G.P_CARDS, pseudoseed('add_card_hand'))

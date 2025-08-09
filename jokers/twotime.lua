@@ -1,9 +1,7 @@
 SMODS.Joker{ --Two Time
-    name = "Two Time",
     key = "twotime",
     config = {
         extra = {
-            j_joker = 0,
             var1 = 0
         }
     },
@@ -17,19 +15,20 @@ SMODS.Joker{ --Two Time
         }
     },
     pos = {
-        x = 7,
-        y = 1
+        x = 3,
+        y = 4
     },
     cost = 7,
     rarity = 2,
     blueprint_compat = false,
     eternal_compat = false,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.end_of_round and context.game_over and context.main_eval and not context.blueprint then
+        if context.end_of_round and context.game_over and context.main_eval  then
                 return {
                     saved = true,
                     message = localize('k_saved_ex'),

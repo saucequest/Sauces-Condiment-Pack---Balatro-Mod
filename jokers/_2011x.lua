@@ -1,5 +1,4 @@
 SMODS.Joker{ --2011X
-    name = "2011X",
     key = "_2011x",
     config = {
         extra = {
@@ -17,19 +16,20 @@ SMODS.Joker{ --2011X
         }
     },
     pos = {
-        x = 3,
-        y = 3
+        x = 0,
+        y = 0
     },
-    cost = 9,
+    cost = 11,
     rarity = 3,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 4,
-        y = 3
+        x = 1,
+        y = 0
     },
 
     loc_vars = function(self, info_queue, card)
@@ -37,7 +37,7 @@ SMODS.Joker{ --2011X
     end,
 
     calculate = function(self, card, context)
-        if context.discard and not context.blueprint then
+        if context.discard  then
                 return {
                     func = function()
                     card.ability.extra.sonicexemult = (card.ability.extra.sonicexemult) + 0.4
@@ -45,7 +45,7 @@ SMODS.Joker{ --2011X
                 end
                 }
         end
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
                 return {
                     Xmult = card.ability.extra.sonicexemult
                 }

@@ -1,5 +1,4 @@
 SMODS.Joker{ --Noli?
-    name = "Noli?",
     key = "nolihallucination",
     config = {
         extra = {
@@ -19,13 +18,14 @@ SMODS.Joker{ --Noli?
         }
     },
     pos = {
-        x = 0,
-        y = 1
+        x = 7,
+        y = 2
     },
     cost = 6,
     rarity = "sauce_hallucination",
     blueprint_compat = true,
     eternal_compat = false,
+    perishable_compat = true,
     unlocked = false,
     discovered = false,
     atlas = 'CustomJokers',
@@ -39,7 +39,7 @@ SMODS.Joker{ --Noli?
     end,
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
                 return {
                     chips = card.ability.extra.chips,
                     extra = {

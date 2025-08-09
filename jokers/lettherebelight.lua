@@ -1,5 +1,4 @@
 SMODS.Joker{ --Let There Be Light
-    name = "Let There Be Light",
     key = "lettherebelight",
     config = {
         extra = {
@@ -17,21 +16,22 @@ SMODS.Joker{ --Let There Be Light
     },
     pos = {
         x = 2,
-        y = 1
+        y = 2
     },
     cost = 8,
     rarity = 3,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.destroy_card and context.destroy_card.should_destroy and not context.blueprint then
+        if context.destroy_card and context.destroy_card.should_destroy  then
             return { remove = true }
         end
-        if context.individual and context.cardarea == G.play and not context.blueprint then
+        if context.individual and context.cardarea == G.play  then
             context.other_card.should_destroy = false
             if SMODS.get_enhancements(context.other_card)["m_steel"] == true then
                 context.other_card.should_destroy = true

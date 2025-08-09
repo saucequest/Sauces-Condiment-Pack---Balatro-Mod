@@ -1,10 +1,8 @@
 SMODS.Joker{ --Asgores Burgentruck
-    name = "Asgores Burgentruck",
     key = "asgoresburgentruck",
     config = {
         extra = {
             joker_slots = 1,
-            j_sauce_dess = 0,
             var1 = 0
         }
     },
@@ -21,19 +19,20 @@ SMODS.Joker{ --Asgores Burgentruck
         }
     },
     pos = {
-        x = 3,
+        x = 2,
         y = 0
     },
     cost = 10,
     rarity = 3,
     blueprint_compat = false,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers and not context.blueprint then
+        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
                 return {
                     func = function()
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Driving in my car right after a beer!", colour = G.C.DARK_EDITION})
@@ -42,19 +41,22 @@ SMODS.Joker{ --Asgores Burgentruck
             end
                 }
         end
-        if context.pre_discard and not context.blueprint then
+        if context.pre_discard  then
                 return {
                     func = function()
             local created_joker = true
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_dess' })
-                            if joker_card then
-                                joker_card:set_edition({ negative = true }, true)
-                            end
-                            return true
-                        end
-                    }))
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_dess' })
+                    if joker_card then
+                        joker_card:set_edition("e_negative", true)
+                        
+                    end
+                    
+                    return true
+                end
+            }))
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Hey, that bump is shaped like a deer!", colour = G.C.BLUE})
             end
@@ -62,7 +64,7 @@ SMODS.Joker{ --Asgores Burgentruck
         end
                 }
         end
-        if context.after and context.cardarea == G.jokers then
+        if context.after and context.cardarea == G.jokers  then
                 return {
                     func = function()
                 local target_joker = nil

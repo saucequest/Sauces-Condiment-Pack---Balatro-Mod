@@ -1,5 +1,4 @@
 SMODS.Joker{ --Rouxls Kaard
-    name = "Rouxls Kaard",
     key = "rouxlskaard",
     config = {
         extra = {
@@ -17,23 +16,24 @@ SMODS.Joker{ --Rouxls Kaard
         }
     },
     pos = {
-        x = 5,
-        y = 0
+        x = 4,
+        y = 3
     },
     cost = 4,
     rarity = 1,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
-        y = 0
+        x = 5,
+        y = 3
     },
 
     calculate = function(self, card, context)
-        if context.setting_blind and not context.blueprint then
+        if context.setting_blind  then
                 return {
                     func = function()local created_consumable = false
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then

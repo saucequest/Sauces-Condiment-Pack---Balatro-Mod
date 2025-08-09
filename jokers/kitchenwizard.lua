@@ -1,5 +1,4 @@
 SMODS.Joker{ --Kitchen Wizard
-    name = "Kitchen Wizard",
     key = "kitchenwizard",
     config = {
         extra = {
@@ -25,12 +24,13 @@ SMODS.Joker{ --Kitchen Wizard
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
             if ((function()
       for i = 1, #G.jokers.cards do
           if G.jokers.cards[i].config.center.key == "j_egg" then

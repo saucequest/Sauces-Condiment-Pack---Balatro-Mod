@@ -1,5 +1,4 @@
 SMODS.Joker{ --Guest 666
-    name = "Guest 666",
     key = "guest666",
     config = {
         extra = {
@@ -19,13 +18,14 @@ SMODS.Joker{ --Guest 666
         }
     },
     pos = {
-        x = 1,
-        y = 4
+        x = 7,
+        y = 1
     },
     cost = 6,
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
@@ -35,7 +35,7 @@ SMODS.Joker{ --Guest 666
     end,
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
             if (card.ability.extra.guesttransform or 0) < 66 then
                 return {
                     mult = card.ability.extra.guesttransform
@@ -46,7 +46,7 @@ SMODS.Joker{ --Guest 666
                 }
             end
         end
-        if context.remove_playing_cards and not context.blueprint then
+        if context.remove_playing_cards  then
                 return {
                     func = function()
                     card.ability.extra.guesttransform = (card.ability.extra.guesttransform) + 6

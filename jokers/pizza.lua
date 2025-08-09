@@ -1,9 +1,7 @@
 SMODS.Joker{ --Pizza
-    name = "Pizza",
     key = "pizza",
     config = {
         extra = {
-            j_joker = 0,
             var1 = 0
         }
     },
@@ -14,19 +12,20 @@ SMODS.Joker{ --Pizza
         }
     },
     pos = {
-        x = 5,
-        y = 1
+        x = 0,
+        y = 3
     },
     cost = 1,
     rarity = 1,
     blueprint_compat = false,
     eternal_compat = false,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.selling_self and not context.blueprint then
+        if context.selling_self  then
                 return {
                     message = "You shouldnt have done that.",
                     extra = {

@@ -1,11 +1,9 @@
 SMODS.Joker{ --Chatty Dee
-    name = "Chatty Dee",
     key = "chattydee",
     config = {
         extra = {
             xchips = 1.2,
-            Xmult = 1.2,
-            j_sauce_chattydee = 0
+            Xmult = 1.2
         }
     },
     loc_txt = {
@@ -21,19 +19,20 @@ SMODS.Joker{ --Chatty Dee
         }
     },
     pos = {
-        x = 2,
+        x = 6,
         y = 0
     },
     cost = 20,
     rarity = 4,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
                 return {
                     x_chips = card.ability.extra.xchips,
                     extra = {
@@ -41,19 +40,22 @@ SMODS.Joker{ --Chatty Dee
                         }
                 }
         end
-        if context.reroll_shop and not context.blueprint then
+        if context.reroll_shop  then
                 return {
                     func = function()
             local created_joker = true
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_chattydee' })
-                            if joker_card then
-                                joker_card:set_edition({ negative = true }, true)
-                            end
-                            return true
-                        end
-                    }))
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_chattydee' })
+                    if joker_card then
+                        joker_card:set_edition("e_negative", true)
+                        
+                    end
+                    
+                    return true
+                end
+            }))
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Beam Attack!", colour = G.C.BLUE})
             end

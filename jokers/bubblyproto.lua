@@ -1,5 +1,4 @@
 SMODS.Joker{ --bubblyproto
-    name = "bubblyproto",
     key = "bubblyproto",
     config = {
         extra = {
@@ -20,28 +19,29 @@ SMODS.Joker{ --bubblyproto
         }
     },
     pos = {
-        x = 8,
-        y = 2
+        x = 4,
+        y = 0
     },
     cost = 7,
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 9,
-        y = 2
+        x = 5,
+        y = 0
     },
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
             if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_a2db57da', 1, card.ability.extra.odds, 'group_0_a2db57da') then
+                if SMODS.pseudorandom_probability(card, 'group_0_a2db57da', 1, card.ability.extra.odds, 'j_sauce_bubblyproto') then
                       SMODS.calculate_effect({x_chips = card.ability.extra.xchips}, card)
                   end
-                if SMODS.pseudorandom_probability(card, 'group_1_e8615ea6', 1, card.ability.extra.odds2, 'group_1_e8615ea6') then
+                if SMODS.pseudorandom_probability(card, 'group_1_e8615ea6', 1, card.ability.extra.odds2, 'j_sauce_bubblyproto') then
                       SMODS.calculate_effect({x_chips = card.ability.extra.xchips2}, card)
                   end
             end

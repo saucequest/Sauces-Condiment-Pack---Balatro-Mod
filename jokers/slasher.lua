@@ -1,5 +1,4 @@
 SMODS.Joker{ --Slasher
-    name = "Slasher",
     key = "slasher",
     config = {
         extra = {
@@ -15,24 +14,25 @@ SMODS.Joker{ --Slasher
         }
     },
     pos = {
-        x = 1,
-        y = 1
+        x = 8,
+        y = 3
     },
     cost = 6,
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
                 return {
                     x_chips = card.ability.extra.xchips
                 }
         end
-        if context.pre_discard and not context.blueprint then
+        if context.pre_discard  then
                 return {
                     dollars = -card.ability.extra.dollars
                 }

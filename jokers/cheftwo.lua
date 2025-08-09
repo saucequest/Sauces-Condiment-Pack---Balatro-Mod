@@ -1,10 +1,8 @@
 SMODS.Joker{ --Chef Two
-    name = "Chef Two",
     key = "cheftwo",
     config = {
         extra = {
-            consumable_slots = 2,
-            j_joker = 0
+            consumable_slots = 2
         }
     },
     loc_txt = {
@@ -17,23 +15,24 @@ SMODS.Joker{ --Chef Two
         }
     },
     pos = {
-        x = 5,
-        y = 2
+        x = 7,
+        y = 0
     },
     cost = 8,
     rarity = 2,
     blueprint_compat = false,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
-        y = 2
+        x = 8,
+        y = 0
     },
 
     calculate = function(self, card, context)
-        if context.end_of_round and context.main_eval and G.GAME.blind.boss and not context.blueprint then
+        if context.end_of_round and context.main_eval and G.GAME.blind.boss  then
                 return {
                     func = function()
                 G.E_MANAGER:add_event(Event({func = function()
@@ -46,17 +45,21 @@ SMODS.Joker{ --Chef Two
                     extra = {
                         func = function()
             local created_joker = false
-                if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-                    created_joker = true
-                    G.GAME.joker_buffer = G.GAME.joker_buffer + 1
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            SMODS.add_card({ set = 'Joker', rarity = 'Common' })
-                            G.GAME.joker_buffer = 0
-                            return true
-                        end
-                    }))
+    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
+        created_joker = true
+        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    local joker_card = SMODS.add_card({ set = 'Joker', rarity = 'Common' })
+                    if joker_card then
+                        
+                        
+                    end
+                    G.GAME.joker_buffer = 0
+                    return true
                 end
+            }))
+            end
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end

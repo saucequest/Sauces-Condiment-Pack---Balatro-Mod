@@ -1,5 +1,4 @@
 SMODS.Joker{ --Killer Kyle
-    name = "Killer Kyle",
     key = "killerkyle",
     config = {
         extra = {
@@ -17,22 +16,23 @@ SMODS.Joker{ --Killer Kyle
         }
     },
     pos = {
-        x = 3,
-        y = 1
+        x = 0,
+        y = 2
     },
     cost = 6,
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.destroy_card and context.destroy_card.should_destroy and not context.blueprint then
+        if context.destroy_card and context.destroy_card.should_destroy  then
             return { remove = true }
         end
-        if context.individual and context.cardarea == G.play and not context.blueprint then
+        if context.individual and context.cardarea == G.play  then
             context.other_card.should_destroy = false
                 context.other_card.should_destroy = true
                 local card_front = pseudorandom_element(G.P_CARDS, pseudoseed('add_card'))

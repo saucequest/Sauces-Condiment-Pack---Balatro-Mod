@@ -14,9 +14,13 @@ SMODS.Consumable {
     hidden = false,
     can_repeat_soul = false,
     atlas = 'CustomConsumables',
+    soul_pos = {
+        x = 3,
+        y = 0
+    },
     use = function(self, card, area, copier)
         local used_card = copier or card
-        if G.hand and #G.hand.highlighted < 4 then
+        if #G.hand.highlighted < 4 then
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,
@@ -85,6 +89,6 @@ SMODS.Consumable {
         end
     end,
     can_use = function(self, card)
-        return (G.hand and #G.hand.highlighted < 4)
+        return (#G.hand.highlighted < 4)
     end
 }

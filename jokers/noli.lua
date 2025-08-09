@@ -1,12 +1,10 @@
 SMODS.Joker{ --Noli
-    name = "Noli",
     key = "noli",
     config = {
         extra = {
             xchips = 2.01,
             odds = 4,
-            Xmult = 0.8,
-            j_sauce_nolihallucination = 0
+            Xmult = 0.8
         }
     },
     loc_txt = {
@@ -21,30 +19,33 @@ SMODS.Joker{ --Noli
         }
     },
     pos = {
-        x = 9,
-        y = 0
+        x = 6,
+        y = 2
     },
     cost = 8,
     rarity = 3,
     blueprint_compat = false,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
             if true then
                 local created_joker = true
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_nolihallucination' })
-                            if joker_card then
-                                joker_card:set_edition({ negative = true }, true)
-                            end
-                            return true
-                        end
-                    }))
+                  G.E_MANAGER:add_event(Event({
+                      func = function()
+                          local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_nolihallucination' })
+                          if joker_card then
+                              joker_card:set_edition("e_negative", true)
+                              
+                          end
+                          
+                          return true
+                      end
+                  }))
                 return {
                     x_chips = card.ability.extra.xchips,
                     extra = {
@@ -53,7 +54,7 @@ SMODS.Joker{ --Noli
                         }
                 ,
                     func = function()
-                        if SMODS.pseudorandom_probability(card, 'group_0_e103e172', 1, card.ability.extra.odds, 'group_0_e103e172') then
+                        if SMODS.pseudorandom_probability(card, 'group_0_e103e172', 1, card.ability.extra.odds, 'j_sauce_noli') then
                       SMODS.calculate_effect({Xmult = card.ability.extra.Xmult}, card)
                   end
                         return true

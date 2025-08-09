@@ -1,5 +1,4 @@
 SMODS.Joker{ --luisgamercool23
-    name = "luisgamercool23",
     key = "luisgamercool23",
     config = {
         extra = {
@@ -18,19 +17,20 @@ SMODS.Joker{ --luisgamercool23
         }
     },
     pos = {
-        x = 5,
-        y = 3
+        x = 3,
+        y = 2
     },
     cost = 7,
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
-        y = 3
+        x = 4,
+        y = 2
     },
 
     loc_vars = function(self, info_queue, card)
@@ -38,15 +38,15 @@ SMODS.Joker{ --luisgamercool23
     end,
 
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and not context.blueprint then
+        if context.individual and context.cardarea == G.play  then
                 card.ability.extra.luischips = (card.ability.extra.luischips) + 0.1
         end
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
                 return {
                     x_chips = card.ability.extra.luischips
                 }
         end
-        if context.setting_blind and not context.blueprint then
+        if context.setting_blind  then
             if G.GAME.round_resets.ante > 5 then
                 return {
                     func = function()

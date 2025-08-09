@@ -1,5 +1,4 @@
 SMODS.Joker{ --FunyConfessions
-    name = "FunyConfessions",
     key = "funyconfessions",
     config = {
         extra = {
@@ -29,33 +28,34 @@ SMODS.Joker{ --FunyConfessions
         }
     },
     pos = {
-        x = 7,
-        y = 2
+        x = 6,
+        y = 1
     },
     cost = 7,
     rarity = 2,
     blueprint_compat = false,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
             if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_5ee12eb7', 1, card.ability.extra.odds, 'group_0_5ee12eb7') then
+                if SMODS.pseudorandom_probability(card, 'group_0_5ee12eb7', 1, card.ability.extra.odds, 'j_sauce_funyconfessions') then
                       SMODS.calculate_effect({mult = card.ability.extra.mult}, card)
                   end
-                if SMODS.pseudorandom_probability(card, 'group_1_3dcd2d47', 1, card.ability.extra.odds2, 'group_1_3dcd2d47') then
+                if SMODS.pseudorandom_probability(card, 'group_1_3dcd2d47', 1, card.ability.extra.odds2, 'j_sauce_funyconfessions') then
                       SMODS.calculate_effect({chips = card.ability.extra.chips}, card)
                   end
-                if SMODS.pseudorandom_probability(card, 'group_2_cf34ec67', 1, card.ability.extra.odds3, 'group_2_cf34ec67') then
+                if SMODS.pseudorandom_probability(card, 'group_2_cf34ec67', 1, card.ability.extra.odds3, 'j_sauce_funyconfessions') then
                       SMODS.calculate_effect({Xmult = card.ability.extra.Xmult}, card)
                   end
-                if SMODS.pseudorandom_probability(card, 'group_3_f5ab6ef6', 1, card.ability.extra.odds4, 'group_3_f5ab6ef6') then
+                if SMODS.pseudorandom_probability(card, 'group_3_f5ab6ef6', 1, card.ability.extra.odds4, 'j_sauce_funyconfessions') then
                       SMODS.calculate_effect({x_chips = card.ability.extra.xchips}, card)
                   end
-                if SMODS.pseudorandom_probability(card, 'group_4_363f98f8', 1, card.ability.extra.odds5, 'group_4_363f98f8') then
+                if SMODS.pseudorandom_probability(card, 'group_4_363f98f8', 1, card.ability.extra.odds5, 'j_sauce_funyconfessions') then
                       SMODS.calculate_effect({e_mult = card.ability.extra.emult}, card)
                   end
             end

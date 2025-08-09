@@ -1,5 +1,4 @@
 SMODS.Joker{ --Dess
-    name = "Dess",
     key = "dess",
     config = {
         extra = {
@@ -18,13 +17,14 @@ SMODS.Joker{ --Dess
         }
     },
     pos = {
-        x = 4,
-        y = 0
+        x = 2,
+        y = 1
     },
     cost = 2,
     rarity = 1,
     blueprint_compat = true,
     eternal_compat = false,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
@@ -34,12 +34,12 @@ SMODS.Joker{ --Dess
     end,
 
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and not context.blueprint then
+        if context.individual and context.cardarea == G.play  then
                 return {
                     chips = card.ability.extra.chips
                 }
         end
-        if context.remove_playing_cards and not context.blueprint then
+        if context.remove_playing_cards  then
                 return {
                     dollars = card.ability.extra.dollars
                 }

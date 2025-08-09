@@ -1,5 +1,4 @@
 SMODS.Joker{ --Whipped Coffee Cookie
-    name = "Whipped Coffee Cookie",
     key = "whippedcoffeecookie",
     config = {
         extra = {
@@ -16,23 +15,24 @@ SMODS.Joker{ --Whipped Coffee Cookie
         }
     },
     pos = {
-        x = 0,
-        y = 0
+        x = 5,
+        y = 4
     },
     cost = 9,
     rarity = 3,
     blueprint_compat = false,
     eternal_compat = false,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 1,
-        y = 0
+        x = 6,
+        y = 4
     },
 
     calculate = function(self, card, context)
-        if context.end_of_round and context.game_over and context.main_eval and not context.blueprint then
+        if context.end_of_round and context.game_over and context.main_eval  then
                 return {
                     saved = true,
                     message = "Comic Studio crashed, but we brought it back up!",
@@ -57,7 +57,7 @@ SMODS.Joker{ --Whipped Coffee Cookie
                         }
                 }
         end
-        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+        if context.end_of_round and context.game_over == false and context.main_eval  then
                 local card_front = pseudorandom_element(G.P_CARDS, pseudoseed('add_card'))
             local new_card = create_playing_card({
                 front = card_front,

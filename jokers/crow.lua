@@ -1,5 +1,4 @@
 SMODS.Joker{ --Crow
-    name = "Crow",
     key = "crow",
     config = {
         extra = {
@@ -15,13 +14,14 @@ SMODS.Joker{ --Crow
         }
     },
     pos = {
-        x = 8,
-        y = 3
+        x = 1,
+        y = 1
     },
     cost = 1,
     rarity = 1,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
@@ -35,7 +35,7 @@ SMODS.Joker{ --Crow
     end,
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
                 return {
                     x_chips = card.ability.extra.xchips,
                     extra = {

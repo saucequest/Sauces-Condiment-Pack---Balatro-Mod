@@ -1,5 +1,4 @@
 SMODS.Joker{ --Ultimate Chimera
-    name = "Ultimate Chimera",
     key = "ultimatechimera",
     config = {
         extra = {
@@ -19,13 +18,14 @@ SMODS.Joker{ --Ultimate Chimera
         }
     },
     pos = {
-        x = 9,
-        y = 3
+        x = 4,
+        y = 4
     },
     cost = 99,
     rarity = "sauce_unnatural",
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
@@ -39,7 +39,7 @@ SMODS.Joker{ --Ultimate Chimera
     end,
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
                 return {
                     x_chips = card.ability.extra.xchips,
                     extra = {
@@ -47,7 +47,7 @@ SMODS.Joker{ --Ultimate Chimera
                         }
                 }
         end
-        if context.setting_blind and not context.blueprint then
+        if context.setting_blind  then
             if (card.ability.extra.impendingdeath or 0) == 3 then
                 return {
                     func = function()

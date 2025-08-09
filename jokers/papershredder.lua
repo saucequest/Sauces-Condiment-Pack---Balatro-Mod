@@ -1,9 +1,7 @@
 SMODS.Joker{ --Paper Shredder
-    name = "Paper Shredder",
     key = "papershredder",
     config = {
         extra = {
-            j_joker = 0,
             var1 = 0
         }
     },
@@ -14,19 +12,20 @@ SMODS.Joker{ --Paper Shredder
         }
     },
     pos = {
-        x = 7,
-        y = 0
+        x = 9,
+        y = 2
     },
     cost = 1,
     rarity = "sauce_trash",
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.setting_blind and not context.blueprint then
+        if context.setting_blind  then
                 return {
                     func = function()
                 local destructable_jokers = {}

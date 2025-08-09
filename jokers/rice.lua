@@ -1,5 +1,4 @@
 SMODS.Joker{ --Rice
-    name = "Rice",
     key = "rice",
     config = {
         extra = {
@@ -14,22 +13,23 @@ SMODS.Joker{ --Rice
     },
     pos = {
         x = 2,
-        y = 2
+        y = 3
     },
     cost = 3,
     rarity = 1,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
         x = 3,
-        y = 2
+        y = 3
     },
 
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and not context.blueprint then
+        if context.individual and context.cardarea == G.play  then
                 return {
                     mult = card.ability.extra.mult
                 }

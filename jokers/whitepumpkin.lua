@@ -1,5 +1,4 @@
 SMODS.Joker{ --White Pumpkin
-    name = "White Pumpkin",
     key = "whitepumpkin",
     config = {
         extra = {
@@ -16,19 +15,20 @@ SMODS.Joker{ --White Pumpkin
         }
     },
     pos = {
-        x = 6,
-        y = 1
+        x = 7,
+        y = 4
     },
     cost = 7,
     rarity = 3,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.hand_drawn and not context.blueprint then
+        if context.hand_drawn  then
                 return {
                     func = function()
                 local card_front = pseudorandom_element(G.P_CARDS, pseudoseed('add_card_hand'))

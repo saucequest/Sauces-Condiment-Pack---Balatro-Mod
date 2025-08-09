@@ -1,5 +1,4 @@
 SMODS.Joker{ --RandomClover
-    name = "RandomClover",
     key = "randomclover",
     config = {
         extra = {
@@ -24,27 +23,28 @@ SMODS.Joker{ --RandomClover
         }
     },
     pos = {
-        x = 8,
-        y = 0
+        x = 1,
+        y = 3
     },
     cost = 8,
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
+    perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.joker_main  then
             if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_09e2f477', 1, card.ability.extra.odds, 'group_0_09e2f477') then
+                if SMODS.pseudorandom_probability(card, 'group_0_09e2f477', 1, card.ability.extra.odds, 'j_sauce_randomclover') then
                       SMODS.calculate_effect({mult = card.ability.extra.mult}, card)
                   end
-                if SMODS.pseudorandom_probability(card, 'group_1_7d575c29', 1, card.ability.extra.odds2, 'group_1_7d575c29') then
+                if SMODS.pseudorandom_probability(card, 'group_1_7d575c29', 1, card.ability.extra.odds2, 'j_sauce_randomclover') then
                       SMODS.calculate_effect({Xmult = card.ability.extra.Xmult}, card)
                   end
-                if SMODS.pseudorandom_probability(card, 'group_2_a692e19a', 1, card.ability.extra.odds3, 'group_2_a692e19a') then
+                if SMODS.pseudorandom_probability(card, 'group_2_a692e19a', 1, card.ability.extra.odds3, 'j_sauce_randomclover') then
                       SMODS.calculate_effect({e_mult = card.ability.extra.emult}, card)
                   end
             end
