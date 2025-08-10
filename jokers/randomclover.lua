@@ -20,10 +20,13 @@ SMODS.Joker{ --RandomClover
             [5] = '',
             [6] = '{C:inactive}\"I have no idea what to put here now so take this clover.\"{}',
             [7] = '{C:inactive}Originates from{} {C:gold}Comic Studio{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 1,
+        x = 5,
         y = 3
     },
     cost = 8,

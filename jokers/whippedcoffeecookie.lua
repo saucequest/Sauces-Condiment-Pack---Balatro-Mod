@@ -12,10 +12,13 @@ SMODS.Joker{ --Whipped Coffee Cookie
             [2] = 'When a Blind is defeated, adds a random card to deck',
             [3] = '{C:inactive}\"Should I check my notifications?\"{}',
             [4] = '{C:inactive}Originates from{} {C:gold}Comic Studio{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 5,
+        x = 9,
         y = 4
     },
     cost = 9,
@@ -27,8 +30,8 @@ SMODS.Joker{ --Whipped Coffee Cookie
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
-        y = 4
+        x = 0,
+        y = 5
     },
 
     calculate = function(self, card, context)

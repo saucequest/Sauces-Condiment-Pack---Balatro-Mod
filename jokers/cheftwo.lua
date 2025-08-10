@@ -12,6 +12,9 @@ SMODS.Joker{ --Chef Two
             [2] = 'when Boss Blind defeated',
             [3] = '{C:inactive}\"Every night, I think of people I\'ll invite!\"{}',
             [4] = '{C:inactive}Originates from{}{C:uncommon} Battle For Dream Island{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

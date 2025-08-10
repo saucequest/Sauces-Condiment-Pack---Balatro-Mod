@@ -13,6 +13,9 @@ SMODS.Joker{ --Cream
             [2] = 'Creates a {C:dark_edition}Food Joker{} when Boss Blind destroyed',
             [3] = '{C:inactive}\"I\'m gonna put on the biggest smile I can and share it with everyone!\"{}',
             [4] = '{C:inactive}Originates from{} {C:spectral}Sonic the Hedgehog{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

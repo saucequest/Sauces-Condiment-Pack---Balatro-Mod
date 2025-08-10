@@ -13,11 +13,14 @@ SMODS.Joker{ --Sinnoh
             [3] = '{C:inactive}(Currently{} {C:dark_edition}^#1#{} {C:inactive}Mult){}',
             [4] = '{C:inactive}\"WHO ARE YOU RUNNING FROM?\"{}',
             [5] = '{C:inactive}Originates from{} {C:tarot}Vs. OURPLE GUY{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 6,
-        y = 3
+        x = 0,
+        y = 4
     },
     cost = 87,
     rarity = "sauce_unnatural",
@@ -28,8 +31,8 @@ SMODS.Joker{ --Sinnoh
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 7,
-        y = 3
+        x = 1,
+        y = 4
     },
 
     loc_vars = function(self, info_queue, card)

@@ -8,15 +8,18 @@ SMODS.Joker{ --Rouxls Kaard
     loc_txt = {
         ['name'] = 'Rouxls Kaard',
         ['text'] = {
-            [1] = 'Creates a random {C:tarot}Tarot Card{} when Blind is selected',
-            [2] = '',
+            [1] = 'Creates a {C:tarot}Rules Card{} when Blind is selected',
+            [2] = '{C:inactive}(Requires room){}',
             [3] = '{C:inactive}\"Geh ha ha ha ha! Thoust FOOLS!\"{}',
             [4] = '{C:inactive}Originates from{} {C:common}DELTARUNE{}',
             [5] = '{C:dark_edition}Follower-suggested{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 4,
+        x = 8,
         y = 3
     },
     cost = 4,
@@ -28,7 +31,7 @@ SMODS.Joker{ --Rouxls Kaard
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 5,
+        x = 9,
         y = 3
     },
 
@@ -41,7 +44,7 @@ SMODS.Joker{ --Rouxls Kaard
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SMODS.add_card{set = 'Tarot', key = nil, key_append = 'joker_forge_tarot'}
+                            SMODS.add_card{set = 'Tarot', key = 'c_sauce_rulescard', key_append = 'joker_forge_tarot'}
                             G.GAME.consumeable_buffer = 0
                             return true
                         end

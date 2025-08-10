@@ -14,6 +14,9 @@ SMODS.Joker{ --Dess
             [3] = '',
             [4] = '{C:inactive}\"Are those headlights? Can\'t you see\"{}',
             [5] = '{C:inactive}Originates from {}{C:common}DELTARUNE{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

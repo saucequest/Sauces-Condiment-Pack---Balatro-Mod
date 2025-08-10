@@ -15,6 +15,9 @@ SMODS.Joker{ --Father
             [3] = 'When the first hand is drawn, adds 2 {C:dark_edition}Negative {}consumables',
             [4] = '{C:inactive}\"do,,n,,t yo,u w,,a, nt to pla,,,y, w,ith,, yo,,u,r fri,,end,,s j,,ac,ob,?\"{}',
             [5] = '{C:inactive}Originates from{} {C:hearts}CDarchives{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

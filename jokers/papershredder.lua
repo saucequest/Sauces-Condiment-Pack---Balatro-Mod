@@ -9,11 +9,14 @@ SMODS.Joker{ --Paper Shredder
         ['name'] = 'Paper Shredder',
         ['text'] = {
             [1] = '{C:red}Destroys{} a random Joker when Blind selected.'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 9,
-        y = 2
+        x = 3,
+        y = 3
     },
     cost = 1,
     rarity = "sauce_trash",

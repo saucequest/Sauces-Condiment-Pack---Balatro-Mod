@@ -9,10 +9,13 @@ SMODS.Joker{ --Rice
         ['name'] = 'Rice',
         ['text'] = {
             [1] = 'All cards scored give {C:red}+3{} Mult'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 2,
+        x = 6,
         y = 3
     },
     cost = 3,
@@ -24,7 +27,7 @@ SMODS.Joker{ --Rice
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 3,
+        x = 7,
         y = 3
     },
 

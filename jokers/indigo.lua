@@ -13,6 +13,9 @@ SMODS.Joker{ --Indigo
             [3] = '{C:inactive}(Requires room){}',
             [4] = '{C:inactive}\"let me out.\"{}',
             [5] = '{C:inactive}Originates from{} {C:rare}Sonic Originals{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

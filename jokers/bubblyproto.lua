@@ -16,6 +16,9 @@ SMODS.Joker{ --bubblyproto
             [3] = '{C:inactive}\"professional cs funnyman\"{}',
             [4] = '{C:inactive}Originates from{} {C:money}Comic Studio{}',
             [5] = '{C:dark_edition}Follower-suggested{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

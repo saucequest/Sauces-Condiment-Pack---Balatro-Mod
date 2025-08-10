@@ -13,6 +13,9 @@ SMODS.Joker{ --2011X
             [3] = '{C:inactive}(Currently{} {X:mult,C:white}X#1#{} {C:inactive}Mult){}',
             [4] = '{C:inactive}\"THINKING OUTSIDE THE BOX, ARE WE?\"{}',
             [5] = '{C:inactive}Originates from{} {C:hearts}SONIC 2011{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

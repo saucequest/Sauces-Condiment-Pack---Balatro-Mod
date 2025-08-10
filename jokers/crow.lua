@@ -11,6 +11,9 @@ SMODS.Joker{ --Crow
         ['text'] = {
             [1] = '{X:red,C:white}X0.9{} Mult and {X:chips,C:white}x0.9{} Chips',
             [2] = '{C:inactive}Originates from{} {C:rare}Sonic Originals{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

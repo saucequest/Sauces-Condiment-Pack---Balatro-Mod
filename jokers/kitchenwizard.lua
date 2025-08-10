@@ -14,6 +14,9 @@ SMODS.Joker{ --Kitchen Wizard
             [3] = '',
             [4] = '{C:inactive}\"You\'re a real pain, you know that?\"{}',
             [5] = '{C:inactive}Originates from{} {C:enhanced}Block Tales{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

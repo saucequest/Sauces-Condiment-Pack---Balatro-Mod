@@ -16,6 +16,9 @@ SMODS.Joker{ --Chatty Dee
             [5] = '{C:inactive}Originates from{} {C:gold}Failboat{}',
             [6] = '',
             [7] = '{C:red}WARNING: May lag your game if you reroll often, as the copies get out of hand quickly.{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

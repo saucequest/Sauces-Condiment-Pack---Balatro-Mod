@@ -16,6 +16,9 @@ SMODS.Joker{ --Asgores Burgentruck
             [5] = '{C:inactive}\"Driving in my car right after a beer!\"{}',
             [6] = '{C:inactive}Originates from{} {C:common}DELTARUNE{}',
             [7] = '{C:dark_edition}Follower-suggested{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

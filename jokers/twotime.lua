@@ -12,10 +12,13 @@ SMODS.Joker{ --Two Time
             [2] = '',
             [3] = '{C:inactive}\"Shadows die twice.\"{}',
             [4] = '{C:inactive}Originates from{} {C:spades}FORSAKEN{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 3,
+        x = 7,
         y = 4
     },
     cost = 7,

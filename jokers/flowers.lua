@@ -20,6 +20,9 @@ SMODS.Joker{ --FLOWERS
             [5] = 'Gives {C:dark_edition,s:5}^99{}{} Chips',
             [6] = '{C:inactive}\"HEAR THE WHISTLE? COVER THE EARS!\"{}',
             [7] = '{C:inactive}Originates from{} {C:dark_edition}The Whistle Occurrence{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

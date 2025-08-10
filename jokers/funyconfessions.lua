@@ -25,6 +25,9 @@ SMODS.Joker{ --FunyConfessions
             [6] = '{C:inactive}\"confess your crimes today! (for me to post them)\"{}',
             [7] = '{C:inactive}Originates from{} {C:money}Comic Studio{}',
             [8] = '{C:dark_edition}Follower-suggested{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

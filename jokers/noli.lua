@@ -16,11 +16,14 @@ SMODS.Joker{ --Noli
             [4] = '',
             [5] = '{C:inactive}\"This thing of darkness I acknowledge mine.\"{}',
             [6] = '{C:inactive}Originates from{} {C:spades}FORSAKEN{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 6,
-        y = 2
+        x = 0,
+        y = 3
     },
     cost = 8,
     rarity = 3,

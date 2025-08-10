@@ -17,11 +17,14 @@ SMODS.Joker{ --You Are An Idiot!
             [7] = '{C:inactive}(Currently{} {X:mult,C:white}x#1#{} {C:inactive}Mult){}',
             [8] = '{C:inactive}\"You are an idiot! A-hahaha!\"{}',
             [9] = '{C:inactive}Originates from{} {C:dark_edition}You Are An Idiot{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 8,
-        y = 4
+        x = 2,
+        y = 5
     },
     cost = 8,
     rarity = 3,
@@ -32,8 +35,8 @@ SMODS.Joker{ --You Are An Idiot!
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 9,
-        y = 4
+        x = 3,
+        y = 5
     },
 
     loc_vars = function(self, info_queue, card)

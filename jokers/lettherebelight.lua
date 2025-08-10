@@ -12,6 +12,9 @@ SMODS.Joker{ --Let There Be Light
             [2] = '',
             [3] = '{C:inactive}\"Let us settle the score\"{}',
             [4] = '{C:inactive}Originates from{} {C:clubs}Hit Single{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

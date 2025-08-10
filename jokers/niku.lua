@@ -14,10 +14,13 @@ SMODS.Joker{ --NIKU
             [4] = 'and destroys itself',
             [5] = '{C:inactive}\"one life, just one life is enough for me.\"{}',
             [6] = '{C:inactive}Originates from{} {C:rare}Sonic Originals{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 5,
+        x = 9,
         y = 2
     },
     cost = 7,

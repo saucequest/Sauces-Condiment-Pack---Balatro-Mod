@@ -12,11 +12,14 @@ SMODS.Joker{ --White Pumpkin
             [3] = '',
             [4] = '{C:inactive}\"Trying to get... leverage?\"{}',
             [5] = '{C:inactive}Originates from {}{C:planet}Minecraft Story Mode{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 7,
-        y = 4
+        x = 1,
+        y = 5
     },
     cost = 7,
     rarity = 3,

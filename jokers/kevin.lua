@@ -15,6 +15,9 @@ SMODS.Joker{ --Kevin
             [4] = '',
             [5] = '{C:inactive}\"Don\'t touch my pizza, don\'t touch my jelly!\"{}',
             [6] = '{C:inactive}Originates from{} {C:diamonds}Don\'t Touch My Pizza{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

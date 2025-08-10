@@ -14,6 +14,9 @@ SMODS.Joker{ --Azure
             [4] = '',
             [5] = '{C:inactive}\"what have you done...?\"{}',
             [6] = '{C:inactive}Originates from{} {C:spades}FORSAKEN{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

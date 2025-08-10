@@ -13,6 +13,9 @@ SMODS.Joker{ --Killer Kyle
             [3] = '',
             [4] = '{C:inactive}\"but it was too late the killer was already waiing out side for them\"{}',
             [5] = '{C:inactive}Originates from{} {C:dark_edition}Roblox movie masked killer{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

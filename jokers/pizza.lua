@@ -9,10 +9,13 @@ SMODS.Joker{ --Pizza
         ['name'] = 'Pizza',
         ['text'] = {
             [1] = 'A pizza.'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 0,
+        x = 4,
         y = 3
     },
     cost = 1,

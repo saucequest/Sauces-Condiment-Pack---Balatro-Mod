@@ -14,6 +14,9 @@ SMODS.Joker{ --luisgamercool23
             [3] = '{C:inactive}(Currently{} {X:chips,C:white}x#1#{}{C:inactive} Chips){}',
             [4] = '{C:inactive}\"top 5 reasons why i hate noobs\"{}',
             [5] = '{C:inactive}Originates from {}{C:attention}Flamingo{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {

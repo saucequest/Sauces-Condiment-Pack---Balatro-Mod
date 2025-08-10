@@ -15,10 +15,13 @@ SMODS.Joker{ --Ultimate Chimera
             [3] = 'by then',
             [4] = '{C:inactive}\"IT\'S MEAL TIME!\"{}',
             [5] = '{C:inactive}Originates from {}{C:rare}Sonic Originals{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 4,
+        x = 8,
         y = 4
     },
     cost = 99,

@@ -11,11 +11,14 @@ SMODS.Joker{ --Slasher
         ['text'] = {
             [1] = '{X:chips,C:white}x1.5 {} Chips',
             [2] = '{C:money}-$3{} every time you discard a hand'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
-        x = 8,
-        y = 3
+        x = 2,
+        y = 4
     },
     cost = 6,
     rarity = 2,

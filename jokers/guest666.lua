@@ -15,6 +15,9 @@ SMODS.Joker{ --Guest 666
             [4] = '{C:inactive}(Currently{} {C:red}+#1#{} {C:inactive}Mult){}',
             [5] = '{C:inactive}\"Your worst nightmare.\"{}',
             [6] = '{C:inactive}Originates from{} {X:red,C:white}ObliviousHD{}'
+        },
+        ['unlock'] = {
+            [1] = ''
         }
     },
     pos = {
