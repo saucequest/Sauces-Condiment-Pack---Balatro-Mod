@@ -20,7 +20,7 @@ SMODS.Joker{ --Dess
         }
     },
     pos = {
-        x = 2,
+        x = 4,
         y = 1
     },
     cost = 2,

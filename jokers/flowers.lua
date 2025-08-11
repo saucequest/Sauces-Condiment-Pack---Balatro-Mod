@@ -26,7 +26,7 @@ SMODS.Joker{ --FLOWERS
         }
     },
     pos = {
-        x = 7,
+        x = 9,
         y = 1
     },
     cost = 55,

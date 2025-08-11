@@ -19,7 +19,7 @@ SMODS.Joker{ --Rouxls Kaard
         }
     },
     pos = {
-        x = 0,
+        x = 2,
         y = 4
     },
     cost = 4,
@@ -31,7 +31,7 @@ SMODS.Joker{ --Rouxls Kaard
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 1,
+        x = 3,
         y = 4
     },
 

@@ -21,8 +21,8 @@ SMODS.Joker{ --Guest 666
         }
     },
     pos = {
-        x = 9,
-        y = 1
+        x = 1,
+        y = 2
     },
     cost = 6,
     rarity = 2,

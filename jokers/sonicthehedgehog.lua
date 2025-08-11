@@ -18,7 +18,7 @@ SMODS.Joker{ --Sonic the Hedgehog
         }
     },
     pos = {
-        x = 5,
+        x = 7,
         y = 4
     },
     cost = 6,
@@ -30,7 +30,7 @@ SMODS.Joker{ --Sonic the Hedgehog
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
+        x = 8,
         y = 4
     },
 

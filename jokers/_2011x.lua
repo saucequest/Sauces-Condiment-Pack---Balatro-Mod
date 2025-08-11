@@ -9,7 +9,7 @@ SMODS.Joker{ --2011X
         ['name'] = '2011X',
         ['text'] = {
             [1] = 'Starts out with {X:red,C:white}X1{} Mult',
-            [2] = 'Discarded cards each add {C:red}0.4{} Mult to 2011X\'s {X:mult,C:white}XMult{}',
+            [2] = 'Discarded cards each add {C:red}0.2{} Mult to 2011X\'s {X:mult,C:white}XMult{}',
             [3] = '{C:inactive}(Currently{} {X:mult,C:white}X#1#{} {C:inactive}Mult){}',
             [4] = '{C:inactive}\"THINKING OUTSIDE THE BOX, ARE WE?\"{}',
             [5] = '{C:inactive}Originates from{} {C:hearts}SONIC 2011{}'
@@ -43,7 +43,7 @@ SMODS.Joker{ --2011X
         if context.discard  then
                 return {
                     func = function()
-                    card.ability.extra.sonicexemult = (card.ability.extra.sonicexemult) + 0.4
+                    card.ability.extra.sonicexemult = (card.ability.extra.sonicexemult) + 0.2
                     return true
                 end
                 }

@@ -21,10 +21,10 @@ SMODS.Joker{ --Noli?
         }
     },
     pos = {
-        x = 3,
+        x = 5,
         y = 3
     },
-    cost = 6,
+    cost = 0,
     rarity = "sauce_hallucination",
     blueprint_compat = true,
     eternal_compat = false,

@@ -20,7 +20,7 @@ SMODS.Joker{ --NIKU
         }
     },
     pos = {
-        x = 1,
+        x = 3,
         y = 3
     },
     cost = 7,

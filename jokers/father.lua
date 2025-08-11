@@ -21,7 +21,7 @@ SMODS.Joker{ --Father
         }
     },
     pos = {
-        x = 5,
+        x = 7,
         y = 1
     },
     cost = 35,
@@ -33,7 +33,7 @@ SMODS.Joker{ --Father
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
+        x = 8,
         y = 1
     },
 

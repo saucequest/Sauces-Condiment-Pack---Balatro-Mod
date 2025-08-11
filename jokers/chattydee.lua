@@ -22,7 +22,7 @@ SMODS.Joker{ --Chatty Dee
         }
     },
     pos = {
-        x = 6,
+        x = 8,
         y = 0
     },
     cost = 20,

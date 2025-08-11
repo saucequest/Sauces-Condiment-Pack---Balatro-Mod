@@ -22,7 +22,7 @@ SMODS.Joker{ --Noli
         }
     },
     pos = {
-        x = 2,
+        x = 4,
         y = 3
     },
     cost = 8,

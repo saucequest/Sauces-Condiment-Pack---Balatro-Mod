@@ -18,8 +18,8 @@ SMODS.Joker{ --Two Time
         }
     },
     pos = {
-        x = 9,
-        y = 4
+        x = 1,
+        y = 5
     },
     cost = 7,
     rarity = 2,

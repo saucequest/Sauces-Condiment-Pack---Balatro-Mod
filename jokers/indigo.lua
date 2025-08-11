@@ -19,7 +19,7 @@ SMODS.Joker{ --Indigo
         }
     },
     pos = {
-        x = 0,
+        x = 2,
         y = 2
     },
     cost = 13,
