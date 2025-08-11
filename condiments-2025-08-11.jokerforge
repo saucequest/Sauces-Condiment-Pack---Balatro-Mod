@@ -4340,7 +4340,7 @@
       "key": "trash",
       "name": "Trash",
       "badge_colour": "6A7A8B",
-      "default_weight": 1
+      "default_weight": 0.417
     },
     {
       "id": "dd5591b2-d46d-4e2f-b60a-6f0543d5f510",
@@ -4354,7 +4354,7 @@
       "key": "unnatural",
       "name": "Unnatural",
       "badge_colour": "000000",
-      "default_weight": 1
+      "default_weight": 0
     }
   ],
   "consumableSets": [],
@@ -4491,5 +4491,5 @@
     }
   ],
   "version": "1.0.0",
-  "exportedAt": "2025-08-11T03:56:21.564Z"
+  "exportedAt": "2025-08-11T04:14:05.355Z"
 }
