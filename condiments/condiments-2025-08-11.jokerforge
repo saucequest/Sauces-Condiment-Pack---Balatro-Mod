@@ -8,7 +8,7 @@
     "description": "An unbalanced mess made in Joker Forge by someone who has no clue what they're doing.\n\nCredits to all the creators of the content the mod references and uses images from! \nPS. Some textures are currently placeholders",
     "prefix": "sauce",
     "main_file": "main.lua",
-    "version": "3.3.0",
+    "version": "3.3.1",
     "priority": 0,
     "badge_colour": "666668",
     "badge_text_colour": "FFFFFF",
@@ -4425,14 +4425,14 @@
       "key": "hallucination",
       "name": "Hallucination",
       "badge_colour": "8200ff",
-      "default_weight": 0
+      "default_weight": 0.001
     },
     {
       "id": "73990a6b-a882-42d5-80a1-70217419b224",
       "key": "unnatural",
       "name": "Unnatural",
       "badge_colour": "000000",
-      "default_weight": 1
+      "default_weight": 0.001
     }
   ],
   "consumableSets": [],
@@ -4569,5 +4569,5 @@
     }
   ],
   "version": "1.0.0",
-  "exportedAt": "2025-08-11T20:21:06.633Z"
+  "exportedAt": "2025-08-11T20:39:42.416Z"
 }
