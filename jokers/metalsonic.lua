@@ -28,7 +28,7 @@ SMODS.Joker{ --Metal Sonic
         }
     },
     pos = {
-        x = 5,
+        x = 7,
         y = 2
     },
     cost = 7,
@@ -40,7 +40,7 @@ SMODS.Joker{ --Metal Sonic
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
+        x = 8,
         y = 2
     },
 

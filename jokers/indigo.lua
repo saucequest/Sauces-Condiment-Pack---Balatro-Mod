@@ -19,8 +19,8 @@ SMODS.Joker{ --Indigo
         }
     },
     pos = {
-        x = 8,
-        y = 1
+        x = 0,
+        y = 2
     },
     cost = 13,
     rarity = 3,

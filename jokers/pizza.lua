@@ -15,7 +15,7 @@ SMODS.Joker{ --Pizza
         }
     },
     pos = {
-        x = 4,
+        x = 6,
         y = 3
     },
     cost = 1,

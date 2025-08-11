@@ -20,7 +20,7 @@ SMODS.Joker{ --luisgamercool23
         }
     },
     pos = {
-        x = 3,
+        x = 5,
         y = 2
     },
     cost = 7,
@@ -32,7 +32,7 @@ SMODS.Joker{ --luisgamercool23
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 4,
+        x = 6,
         y = 2
     },
 

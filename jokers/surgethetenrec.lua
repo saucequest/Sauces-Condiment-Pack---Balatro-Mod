@@ -19,7 +19,7 @@ SMODS.Joker{ --Surge the Tenrec
         }
     },
     pos = {
-        x = 5,
+        x = 7,
         y = 4
     },
     cost = 8,
@@ -31,7 +31,7 @@ SMODS.Joker{ --Surge the Tenrec
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
+        x = 8,
         y = 4
     },
 

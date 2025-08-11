@@ -7,7 +7,7 @@
   "description": "An unbalanced mess made in Joker Forge by someone who has no clue what they're doing.\n\nCredits to all the creators of the content the mod references and uses images from! \nPS. Some textures are currently placeholders",
   "prefix": "sauce",
   "main_file": "main.lua",
-  "version": "3.1.1",
+  "version": "3.2.1",
   "priority": 0,
   "badge_colour": "666668",
   "badge_text_colour": "FFFFFF",

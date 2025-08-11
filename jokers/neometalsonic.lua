@@ -19,11 +19,11 @@ SMODS.Joker{ --Neo Metal Sonic
             [8] = '{C:inactive}Originates from{} {C:common}Sonic the Hedgehog{}'
         },
         ['unlock'] = {
-            [1] = 'Unlocked by default.'
+            [1] = ''
         }
     },
     pos = {
-        x = 7,
+        x = 9,
         y = 2
     },
     cost = 0,
@@ -35,8 +35,8 @@ SMODS.Joker{ --Neo Metal Sonic
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 8,
-        y = 2
+        x = 0,
+        y = 3
     },
 
     loc_vars = function(self, info_queue, card)

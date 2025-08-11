@@ -1,4 +1,12 @@
 SMODS.Atlas({
+    key = "modicon", 
+    path = "ModIcon.png", 
+    px = 34,
+    py = 34,
+    atlas_table = "ASSET_ATLAS"
+}):register()
+
+SMODS.Atlas({
     key = "CustomJokers", 
     path = "CustomJokers.png", 
     px = 71,

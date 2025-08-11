@@ -21,8 +21,8 @@ SMODS.Joker{ --Ultimate Chimera
         }
     },
     pos = {
-        x = 8,
-        y = 4
+        x = 0,
+        y = 5
     },
     cost = 99,
     rarity = "sauce_unnatural",

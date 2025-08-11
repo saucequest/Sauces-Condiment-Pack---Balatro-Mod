@@ -15,7 +15,6 @@ SMODS.Enhancement {
     }
     },
     atlas = 'CustomEnhancements',
-    pos = { x = 0, y = 0 },
     any_suit = true,
     replace_base_card = false,
     no_rank = false,

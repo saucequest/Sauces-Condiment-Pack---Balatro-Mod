@@ -19,8 +19,8 @@ SMODS.Joker{ --Rouxls Kaard
         }
     },
     pos = {
-        x = 8,
-        y = 3
+        x = 0,
+        y = 4
     },
     cost = 4,
     rarity = 1,
@@ -31,8 +31,8 @@ SMODS.Joker{ --Rouxls Kaard
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 9,
-        y = 3
+        x = 1,
+        y = 4
     },
 
     calculate = function(self, card, context)

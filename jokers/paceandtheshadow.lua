@@ -17,7 +17,7 @@ SMODS.Joker{ --Pace and The Shadow
         }
     },
     pos = {
-        x = 2,
+        x = 4,
         y = 3
     },
     cost = 8,

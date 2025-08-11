@@ -17,7 +17,7 @@ SMODS.Joker{ --Slasher
         }
     },
     pos = {
-        x = 2,
+        x = 4,
         y = 4
     },
     cost = 6,

@@ -19,7 +19,7 @@ SMODS.Joker{ --Sinnoh
         }
     },
     pos = {
-        x = 0,
+        x = 2,
         y = 4
     },
     cost = 87,
@@ -31,7 +31,7 @@ SMODS.Joker{ --Sinnoh
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 1,
+        x = 3,
         y = 4
     },
 
