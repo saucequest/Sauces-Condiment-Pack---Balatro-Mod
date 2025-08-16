@@ -23,7 +23,7 @@ SMODS.Joker{ --You Are An Idiot!
         }
     },
     pos = {
-        x = 6,
+        x = 7,
         y = 5
     },
     cost = 8,
@@ -35,7 +35,7 @@ SMODS.Joker{ --You Are An Idiot!
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 7,
+        x = 8,
         y = 5
     },
 

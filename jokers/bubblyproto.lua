@@ -22,7 +22,7 @@ SMODS.Joker{ --bubblyproto
         }
     },
     pos = {
-        x = 4,
+        x = 5,
         y = 0
     },
     cost = 7,
@@ -34,7 +34,7 @@ SMODS.Joker{ --bubblyproto
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 5,
+        x = 6,
         y = 0
     },
 

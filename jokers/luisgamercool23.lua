@@ -9,7 +9,7 @@ SMODS.Joker{ --luisgamercool23
     loc_txt = {
         ['name'] = 'luisgamercool23',
         ['text'] = {
-            [1] = 'Every card played adds {C:blue}0.1 {}to luis\'s {X:chips,C:white}xChips{}',
+            [1] = 'Every card played adds {C:blue}0.01 {}to luis\'s {X:chips,C:white}xChips{}',
             [2] = 'If Ante is above 5, {C:red}halves {}the Blind Requirement',
             [3] = '{C:inactive}(Currently{} {X:chips,C:white}x#1#{}{C:inactive} Chips){}',
             [4] = '{C:inactive}\"top 5 reasons why i hate noobs\"{}',
@@ -42,7 +42,7 @@ SMODS.Joker{ --luisgamercool23
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
-                card.ability.extra.luischips = (card.ability.extra.luischips) + 0.1
+                card.ability.extra.luischips = (card.ability.extra.luischips) + 0.01
         end
         if context.cardarea == G.jokers and context.joker_main  then
                 return {

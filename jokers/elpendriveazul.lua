@@ -19,7 +19,7 @@ SMODS.Joker{ --El Pendrive Azul
         }
     },
     pos = {
-        x = 5,
+        x = 6,
         y = 1
     },
     cost = 7,
@@ -31,7 +31,7 @@ SMODS.Joker{ --El Pendrive Azul
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
+        x = 7,
         y = 1
     },
 

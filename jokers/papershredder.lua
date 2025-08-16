@@ -19,7 +19,7 @@ SMODS.Joker{ --Paper Shredder
         y = 3
     },
     cost = 1,
-    rarity = "sauce_trash",
+    rarity = 1,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,

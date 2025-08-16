@@ -18,8 +18,8 @@ SMODS.Joker{ --Chef Two
         }
     },
     pos = {
-        x = 9,
-        y = 0
+        x = 0,
+        y = 1
     },
     cost = 8,
     rarity = 2,
@@ -30,7 +30,7 @@ SMODS.Joker{ --Chef Two
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 0,
+        x = 1,
         y = 1
     },
 

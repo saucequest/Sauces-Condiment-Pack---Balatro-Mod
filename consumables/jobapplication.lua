@@ -1,7 +1,7 @@
 SMODS.Consumable {
     key = 'jobapplication',
     set = 'Spectral',
-    pos = { x = 0, y = 0 },
+    pos = { x = 1, y = 0 },
     config = { extra = {
         odds = 15,
         odds2 = 12,

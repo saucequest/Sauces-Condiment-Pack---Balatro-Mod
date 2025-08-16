@@ -19,7 +19,7 @@ SMODS.Joker{ --2011X
         }
     },
     pos = {
-        x = 0,
+        x = 1,
         y = 0
     },
     cost = 11,
@@ -31,7 +31,7 @@ SMODS.Joker{ --2011X
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 1,
+        x = 2,
         y = 0
     },
 

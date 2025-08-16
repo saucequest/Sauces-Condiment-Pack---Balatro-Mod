@@ -18,7 +18,7 @@ SMODS.Joker{ --Two Time
         }
     },
     pos = {
-        x = 1,
+        x = 2,
         y = 5
     },
     cost = 7,

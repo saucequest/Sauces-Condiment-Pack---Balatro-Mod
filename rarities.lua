@@ -1,19 +1,4 @@
 SMODS.Rarity {
-    key = "trash",
-    pools = {
-        ["Joker"] = true
-    },
-    default_weight = 0.417,
-    badge_colour = HEX('6A7A8B'),
-    loc_txt = {
-        name = "Trash"
-    },
-    get_weight = function(self, weight, object_type)
-        return weight
-    end,
-}
-
-SMODS.Rarity {
     key = "hallucination",
     pools = {
         ["Joker"] = true

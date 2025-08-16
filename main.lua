@@ -66,18 +66,6 @@ local function load_consumables_folder()
     end
 end
 
-local function load_rarities_file()
-    local mod_path = SMODS.current_mod.path
-    assert(SMODS.load_file("rarities.lua"))()
-end
-
-load_rarities_file()
-local function load_boosters_file()
-    local mod_path = SMODS.current_mod.path
-    assert(SMODS.load_file("boosters.lua"))()
-end
-
-load_boosters_file()
 local function load_enhancements_folder()
     local mod_path = SMODS.current_mod.path
     local enhancements_path = mod_path .. "/enhancements"
@@ -90,6 +78,18 @@ local function load_enhancements_folder()
     end
 end
 
+local function load_rarities_file()
+    local mod_path = SMODS.current_mod.path
+    assert(SMODS.load_file("rarities.lua"))()
+end
+
+load_rarities_file()
+local function load_boosters_file()
+    local mod_path = SMODS.current_mod.path
+    assert(SMODS.load_file("boosters.lua"))()
+end
+
+load_boosters_file()
 load_jokers_folder()
 load_consumables_folder()
 load_enhancements_folder()

@@ -2,24 +2,27 @@ SMODS.Joker{ --Chara
     key = "chara",
     config = {
         extra = {
-            killcount = 1
+            killcount = 1,
+            rerollmult = 0.1
         }
     },
     loc_txt = {
         ['name'] = 'Chara',
         ['text'] = {
             [1] = 'At the end of round, {C:red}destroy {}a random Joker,',
-            [2] = 'multiply its sell value by {C:money}0.1{}, and then add it to its {X:mult,C:white}XMult{}.',
-            [3] = '{C:inactive}(Currently{} {X:mult,C:white}X#1#{} {C:inactive}Mult.){}',
-            [4] = '{C:inactive}\"SINCE WHEN WERE YOU THE ONE IN CONTROL?\"{}',
-            [5] = '{C:inactive}Originates from{} {C:hearts}Undertale{}'
+            [2] = 'multiply its sell value by {C:money}#2#{}, and then add it to its {X:mult,C:white}XMult{}.',
+            [3] = 'Scored 9s add {C:money}0.1{} to the multiplier the sell',
+            [4] = 'value will be multiplied by',
+            [5] = '{C:inactive}(Currently{} {X:mult,C:white}X#1#{} {C:inactive}Mult.){}',
+            [6] = '{C:inactive}\"SINCE WHEN WERE YOU THE ONE IN CONTROL?\"{}',
+            [7] = '{C:inactive}Originates from{} {C:hearts}Undertale{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 6,
+        x = 7,
         y = 0
     },
     cost = 9,
@@ -31,12 +34,12 @@ SMODS.Joker{ --Chara
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 7,
+        x = 8,
         y = 0
     },
 
     loc_vars = function(self, info_queue, card)
-        return {vars = {card.ability.extra.killcount}}
+        return {vars = {card.ability.extra.killcount, card.ability.extra.rerollmult}}
     end,
 
     calculate = function(self, card, context)
@@ -52,9 +55,6 @@ SMODS.Joker{ --Chara
                 local target_joker = #destructable_jokers > 0 and pseudorandom_element(destructable_jokers, pseudoseed('destroy_joker')) or nil
                 
                 if target_joker then
-                    local joker_sell_value = target_joker.sell_cost or 0
-                    local sell_value_gain = joker_sell_value * 0.1
-                    card.ability.extra.killcount = card.ability.extra.killcount + sell_value_gain
                     target_joker.getting_sliced = true
                     G.E_MANAGER:add_event(Event({
                         func = function()
@@ -72,6 +72,11 @@ SMODS.Joker{ --Chara
                 return {
                     Xmult = card.ability.extra.killcount
                 }
+        end
+        if context.individual and context.cardarea == G.play  then
+            if context.other_card:get_id() == 9 then
+                card.ability.extra.rerollmult = (card.ability.extra.rerollmult) + 0.1
+            end
         end
     end
 }

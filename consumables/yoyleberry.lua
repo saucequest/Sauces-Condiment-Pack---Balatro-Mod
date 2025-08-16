@@ -1,7 +1,7 @@
 SMODS.Consumable {
     key = 'yoyleberry',
     set = 'Tarot',
-    pos = { x = 2, y = 0 },
+    pos = { x = 3, y = 0 },
     loc_txt = {
         name = 'Yoyleberry',
         text = {
@@ -15,7 +15,7 @@ SMODS.Consumable {
     can_repeat_soul = false,
     atlas = 'CustomConsumables',
     soul_pos = {
-        x = 3,
+        x = 4,
         y = 0
     },
     use = function(self, card, area, copier)
