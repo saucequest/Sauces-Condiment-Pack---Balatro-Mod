@@ -19,7 +19,7 @@ SMODS.Joker{ --Whipped Coffee Cookie
         }
     },
     pos = {
-        x = 7,
+        x = 8,
         y = 9
     },
     cost = 9,
@@ -31,7 +31,7 @@ SMODS.Joker{ --Whipped Coffee Cookie
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 8,
+        x = 9,
         y = 9
     },
 

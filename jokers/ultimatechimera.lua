@@ -21,7 +21,7 @@ SMODS.Joker{ --Ultimate Chimera
         }
     },
     pos = {
-        x = 6,
+        x = 7,
         y = 9
     },
     cost = 99,

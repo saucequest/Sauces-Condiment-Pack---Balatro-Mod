@@ -9,9 +9,8 @@ SMODS.Joker{ --Prange Guy
         ['name'] = 'Prange Guy',
         ['text'] = {
             [1] = 'Diet Colas give {C:red}+10{} Mult',
-            [2] = 'Having 3 Diet Colas makes Prange give {X:mult,C:white}X2{} Mult',
-            [3] = '{C:inactive}“Definitely in the thick of that right now.”{}',
-            [4] = '{C:inactive}Originates from{} {C:tarot}Vs. OURPLE GUY{}'
+            [2] = '{C:inactive}“Definitely in the thick of that right now.”{}',
+            [3] = '{C:inactive}Originates from{} {C:tarot}Vs. OURPLE GUY{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
