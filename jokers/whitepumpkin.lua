@@ -18,8 +18,8 @@ SMODS.Joker{ --White Pumpkin
         }
     },
     pos = {
-        x = 6,
-        y = 5
+        x = 9,
+        y = 9
     },
     cost = 7,
     rarity = 3,

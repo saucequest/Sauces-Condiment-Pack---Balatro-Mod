@@ -31,8 +31,8 @@ SMODS.Joker{ --FunyConfessions
         }
     },
     pos = {
-        x = 0,
-        y = 2
+        x = 2,
+        y = 4
     },
     cost = 7,
     rarity = 2,

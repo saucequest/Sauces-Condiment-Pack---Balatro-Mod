@@ -17,8 +17,8 @@ SMODS.Joker{ --Crow
         }
     },
     pos = {
-        x = 4,
-        y = 1
+        x = 6,
+        y = 2
     },
     cost = 1,
     rarity = 1,
@@ -28,10 +28,14 @@ SMODS.Joker{ --Crow
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-
     in_pool = function(self, args)
-        return args.source ~= 'sho'
-    end,
+          return (
+          not args 
+          or args.source ~= 'sho' 
+          or args.source == 'buf' or args.source == 'jud' or args.source == 'rif' or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+          )
+          and true
+      end,
 
     set_ability = function(self, card, initial)
         card:set_eternal(true)

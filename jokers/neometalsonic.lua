@@ -23,8 +23,8 @@ SMODS.Joker{ --Neo Metal Sonic
         }
     },
     pos = {
-        x = 1,
-        y = 3
+        x = 2,
+        y = 6
     },
     cost = 0,
     rarity = 4,
@@ -35,9 +35,17 @@ SMODS.Joker{ --Neo Metal Sonic
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 2,
-        y = 3
+        x = 3,
+        y = 6
     },
+    in_pool = function(self, args)
+          return (
+          not args 
+          or args.source ~= 'sho' and args.source ~= 'buf' and args.source ~= 'jud' and args.source ~= 'sou' 
+          or args.source == 'rif' or args.source == 'rta' or args.source == 'uta' or args.source == 'wra'
+          )
+          and true
+      end,
 
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.neochips}}

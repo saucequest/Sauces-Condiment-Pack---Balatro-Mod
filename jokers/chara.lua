@@ -22,8 +22,8 @@ SMODS.Joker{ --Chara
         }
     },
     pos = {
-        x = 7,
-        y = 0
+        x = 8,
+        y = 1
     },
     cost = 9,
     rarity = 2,
@@ -34,8 +34,8 @@ SMODS.Joker{ --Chara
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 8,
-        y = 0
+        x = 9,
+        y = 1
     },
 
     loc_vars = function(self, info_queue, card)
@@ -43,7 +43,7 @@ SMODS.Joker{ --Chara
     end,
 
     calculate = function(self, card, context)
-        if context.end_of_round and context.game_over == false and context.main_eval  then
+        if context.end_of_round and context.game_over == false and context.main_eval  and not context.blueprint then
                 return {
                     func = function()
                 local destructable_jokers = {}

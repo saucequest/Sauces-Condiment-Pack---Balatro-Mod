@@ -25,7 +25,9 @@ SMODS.Booster {
             0.5,
             0.7,
             0.6,
-            0.9
+            0.9,
+            0.5,
+            1
         }
         local total_weight = 0
         for _, weight in ipairs(weights) do
@@ -80,6 +82,24 @@ SMODS.Booster {
         elseif selected_index == 5 then
             return {
             key = "j_sauce_elpendriveazul",
+            set = "Joker",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append = "sauce_red_ring"
+            }
+        elseif selected_index == 6 then
+            return {
+            key = "j_sauce_allfather",
+            set = "Joker",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append = "sauce_red_ring"
+            }
+        elseif selected_index == 7 then
+            return {
+            key = "sauce_end",
             set = "Joker",
                 area = G.pack_cards,
                 skip_materialize = true,

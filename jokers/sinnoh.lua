@@ -20,7 +20,7 @@ SMODS.Joker{ --Sinnoh
     },
     pos = {
         x = 4,
-        y = 4
+        y = 8
     },
     cost = 87,
     rarity = "sauce_unnatural",
@@ -32,8 +32,16 @@ SMODS.Joker{ --Sinnoh
     atlas = 'CustomJokers',
     soul_pos = {
         x = 5,
-        y = 4
+        y = 8
     },
+    in_pool = function(self, args)
+          return (
+          not args 
+          or args.source ~= 'sho' and args.source ~= 'buf' and args.source ~= 'jud' 
+          or args.source == 'rif' or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+          )
+          and G.GAME.pool_flags.sauce_stage_1_sold and G.GAME.pool_flags.sauce_stage_2_sold and G.GAME.pool_flags.sauce_trauma
+      end,
 
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.sinnohmult}}

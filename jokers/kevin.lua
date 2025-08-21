@@ -21,8 +21,8 @@ SMODS.Joker{ --Kevin
         }
     },
     pos = {
-        x = 3,
-        y = 2
+        x = 9,
+        y = 4
     },
     cost = 5,
     rarity = 2,
@@ -44,7 +44,7 @@ SMODS.Joker{ --Kevin
                     x_chips = card.ability.extra.xchips
                 }
         end
-        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
+        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  and not context.blueprint then
                 return {
                     func = function()
             local created_joker = true

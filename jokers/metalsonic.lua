@@ -3,7 +3,9 @@ SMODS.Joker{ --Metal Sonic
     config = {
         extra = {
             electricmeter = 0,
-            ignore = 0
+            no = 0,
+            var1 = 0,
+            respect = 0
         }
     },
     loc_txt = {
@@ -28,8 +30,8 @@ SMODS.Joker{ --Metal Sonic
         }
     },
     pos = {
-        x = 9,
-        y = 2
+        x = 7,
+        y = 5
     },
     cost = 7,
     rarity = 3,
@@ -40,8 +42,8 @@ SMODS.Joker{ --Metal Sonic
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 0,
-        y = 3
+        x = 8,
+        y = 5
     },
 
     loc_vars = function(self, info_queue, card)
@@ -98,8 +100,32 @@ SMODS.Joker{ --Metal Sonic
                 card.ability.extra.electricmeter = (card.ability.extra.electricmeter) + 2
             elseif SMODS.get_enhancements(context.other_card)["m_steel"] == true then
                 card.ability.extra.electricmeter = (card.ability.extra.electricmeter) + 1.5
-            elseif (card.ability.extra.electricmeter or 0) >= 30 then
-                local created_joker = true
+            end
+        end
+        if context.cardarea == G.jokers and context.joker_main  and not context.blueprint then
+            if (card.ability.extra.electricmeter or 0) >= 30 then
+                local destructable_jokers = {}
+                for i, joker in ipairs(G.jokers.cards) do
+                    if joker ~= card and not joker.ability.eternal and not joker.getting_sliced then
+                        table.insert(destructable_jokers, joker)
+                    end
+                end
+                local target_joker = #destructable_jokers > 0 and pseudorandom_element(destructable_jokers, pseudoseed('destroy_joker')) or nil
+                
+                if target_joker then
+                    target_joker.getting_sliced = true
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            target_joker:start_dissolve({G.C.RED}, nil, 1.6)
+                            return true
+                        end
+                    }))
+                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Destroyed!", colour = G.C.RED})
+                end
+                local created_joker = false
+    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
+        created_joker = true
+        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
                   G.E_MANAGER:add_event(Event({
                       func = function()
                           local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_neometalsonic' })
@@ -107,20 +133,13 @@ SMODS.Joker{ --Metal Sonic
                               
                               
                           end
-                          
+                          G.GAME.joker_buffer = 0
                           return true
                       end
                   }))
+                  end
                 return {
-                    func = function()
-                card:start_dissolve()
-                return true
-            end,
-                    message = "Destroyed!",
-                    extra = {
-                        message = created_joker and localize('k_plus_joker') or nil,
-                        colour = G.C.BLUE
-                        }
+                    message = created_joker and localize('k_plus_joker') or nil
                 }
             end
         end

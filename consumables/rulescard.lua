@@ -1,7 +1,7 @@
 SMODS.Consumable {
     key = 'rulescard',
     set = 'Tarot',
-    pos = { x = 2, y = 0 },
+    pos = { x = 3, y = 0 },
     loc_txt = {
         name = 'Rules Card',
         text = {

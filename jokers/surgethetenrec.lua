@@ -19,8 +19,8 @@ SMODS.Joker{ --Surge the Tenrec
         }
     },
     pos = {
-        x = 9,
-        y = 4
+        x = 2,
+        y = 9
     },
     cost = 8,
     rarity = 3,
@@ -31,12 +31,12 @@ SMODS.Joker{ --Surge the Tenrec
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 0,
-        y = 5
+        x = 3,
+        y = 9
     },
 
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play  then
+        if context.individual and context.cardarea == G.play  and not context.blueprint then
             if context.other_card == context.scoring_hand[#context.scoring_hand] then
                 context.other_card:set_ability(G.P_CENTERS.m_sauce_electric)
                 return {
@@ -54,7 +54,7 @@ SMODS.Joker{ --Surge the Tenrec
                     x_chips = card.ability.extra.xchips
                 }
         end
-        if context.discard  then
+        if context.discard  and not context.blueprint then
                 return {
                     remove = true,
                   message = "Destroyed!"

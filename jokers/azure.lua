@@ -20,7 +20,7 @@ SMODS.Joker{ --Azure
         }
     },
     pos = {
-        x = 4,
+        x = 7,
         y = 0
     },
     cost = 9,

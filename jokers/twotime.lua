@@ -9,7 +9,7 @@ SMODS.Joker{ --Two Time
         ['name'] = 'Two Time',
         ['text'] = {
             [1] = 'Prevents death but {C:hearts}destroys{} the rightmost Joker when preventing.',
-            [2] = '',
+            [2] = '{C:red}self-destructs{}',
             [3] = '{C:inactive}\"Shadows die twice.\"{}',
             [4] = '{C:inactive}Originates from{} {C:spades}FORSAKEN{}'
         },
@@ -18,8 +18,8 @@ SMODS.Joker{ --Two Time
         }
     },
     pos = {
-        x = 2,
-        y = 5
+        x = 5,
+        y = 9
     },
     cost = 7,
     rarity = 2,

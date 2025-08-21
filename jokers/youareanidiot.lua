@@ -23,8 +23,8 @@ SMODS.Joker{ --You Are An Idiot!
         }
     },
     pos = {
-        x = 7,
-        y = 5
+        x = 0,
+        y = 10
     },
     cost = 8,
     rarity = 3,
@@ -35,8 +35,8 @@ SMODS.Joker{ --You Are An Idiot!
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 8,
-        y = 5
+        x = 1,
+        y = 10
     },
 
     loc_vars = function(self, info_queue, card)

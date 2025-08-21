@@ -21,8 +21,8 @@ SMODS.Joker{ --Ultimate Chimera
         }
     },
     pos = {
-        x = 3,
-        y = 5
+        x = 6,
+        y = 9
     },
     cost = 99,
     rarity = "sauce_unnatural",
@@ -32,10 +32,14 @@ SMODS.Joker{ --Ultimate Chimera
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-
     in_pool = function(self, args)
-        return args.source ~= 'sho'
-    end,
+          return (
+          not args 
+          or args.source ~= 'sho' and args.source ~= 'buf' and args.source ~= 'jud' 
+          or args.source == 'rif' or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+          )
+          and true
+      end,
 
     set_ability = function(self, card, initial)
         card:set_eternal(true)

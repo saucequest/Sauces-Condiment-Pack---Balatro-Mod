@@ -19,8 +19,8 @@ SMODS.Joker{ --Killer Kyle
         }
     },
     pos = {
-        x = 4,
-        y = 2
+        x = 0,
+        y = 5
     },
     cost = 6,
     rarity = 2,

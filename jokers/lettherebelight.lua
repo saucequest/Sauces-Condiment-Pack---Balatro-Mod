@@ -18,8 +18,8 @@ SMODS.Joker{ --Let There Be Light
         }
     },
     pos = {
-        x = 6,
-        y = 2
+        x = 2,
+        y = 5
     },
     cost = 8,
     rarity = 3,

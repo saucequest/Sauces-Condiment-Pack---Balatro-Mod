@@ -18,8 +18,8 @@ SMODS.Joker{ --Chef Two
         }
     },
     pos = {
-        x = 0,
-        y = 1
+        x = 1,
+        y = 2
     },
     cost = 8,
     rarity = 2,
@@ -30,8 +30,8 @@ SMODS.Joker{ --Chef Two
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 1,
-        y = 1
+        x = 2,
+        y = 2
     },
 
     calculate = function(self, card, context)

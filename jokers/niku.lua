@@ -20,12 +20,12 @@ SMODS.Joker{ --NIKU
         }
     },
     pos = {
-        x = 3,
-        y = 3
+        x = 4,
+        y = 6
     },
     cost = 7,
     rarity = 3,
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = true,
     unlocked = true,

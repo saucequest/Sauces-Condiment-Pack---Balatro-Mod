@@ -26,8 +26,8 @@ SMODS.Joker{ --RandomClover
         }
     },
     pos = {
-        x = 9,
-        y = 3
+        x = 2,
+        y = 7
     },
     cost = 8,
     rarity = 2,

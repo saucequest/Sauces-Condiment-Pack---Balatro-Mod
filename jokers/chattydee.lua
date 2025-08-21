@@ -22,8 +22,8 @@ SMODS.Joker{ --Chatty Dee
         }
     },
     pos = {
-        x = 9,
-        y = 0
+        x = 0,
+        y = 2
     },
     cost = 20,
     rarity = 4,
@@ -33,6 +33,14 @@ SMODS.Joker{ --Chatty Dee
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    in_pool = function(self, args)
+          return (
+          not args 
+          or args.source ~= 'sho' 
+          or args.source == 'buf' or args.source == 'jud' or args.source == 'rif' or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+          )
+          and true
+      end,
 
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
@@ -43,7 +51,7 @@ SMODS.Joker{ --Chatty Dee
                         }
                 }
         end
-        if context.reroll_shop  then
+        if context.reroll_shop  and not context.blueprint then
                 return {
                     func = function()
             local created_joker = true

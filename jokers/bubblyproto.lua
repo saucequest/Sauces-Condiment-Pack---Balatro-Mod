@@ -23,7 +23,7 @@ SMODS.Joker{ --bubblyproto
     },
     pos = {
         x = 5,
-        y = 0
+        y = 1
     },
     cost = 7,
     rarity = 2,
@@ -35,7 +35,7 @@ SMODS.Joker{ --bubblyproto
     atlas = 'CustomJokers',
     soul_pos = {
         x = 6,
-        y = 0
+        y = 1
     },
 
     calculate = function(self, card, context)

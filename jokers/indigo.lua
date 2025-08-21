@@ -19,11 +19,11 @@ SMODS.Joker{ --Indigo
         }
     },
     pos = {
-        x = 2,
-        y = 2
+        x = 5,
+        y = 4
     },
     cost = 13,
-    rarity = 3,
+    rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -39,7 +39,7 @@ SMODS.Joker{ --Indigo
                 }
             end
         end
-        if context.selling_self  then
+        if context.selling_self  and not context.blueprint then
                 return {
                     func = function()
             local created_joker = false

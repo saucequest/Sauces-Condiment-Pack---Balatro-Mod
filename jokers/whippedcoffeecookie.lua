@@ -11,15 +11,16 @@ SMODS.Joker{ --Whipped Coffee Cookie
             [1] = 'Prevents death, but sets your money to {C:money}$0{} when preventing',
             [2] = 'When a Blind is defeated, adds a random card to deck',
             [3] = '{C:inactive}\"Should I check my notifications?\"{}',
-            [4] = '{C:inactive}Originates from{} {C:gold}Comic Studio{}'
+            [4] = '{C:red}self-destructs{}',
+            [5] = '{C:inactive}Originates from{} {C:gold}Comic Studio{}'
         },
         ['unlock'] = {
             [1] = ''
         }
     },
     pos = {
-        x = 4,
-        y = 5
+        x = 7,
+        y = 9
     },
     cost = 9,
     rarity = 3,
@@ -30,8 +31,8 @@ SMODS.Joker{ --Whipped Coffee Cookie
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 5,
-        y = 5
+        x = 8,
+        y = 9
     },
 
     calculate = function(self, card, context)

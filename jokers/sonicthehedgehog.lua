@@ -19,7 +19,7 @@ SMODS.Joker{ --Sonic the Hedgehog
     },
     pos = {
         x = 7,
-        y = 4
+        y = 8
     },
     cost = 6,
     rarity = 2,
@@ -31,7 +31,7 @@ SMODS.Joker{ --Sonic the Hedgehog
     atlas = 'CustomJokers',
     soul_pos = {
         x = 8,
-        y = 4
+        y = 8
     },
 
     calculate = function(self, card, context)

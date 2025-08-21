@@ -15,8 +15,8 @@ SMODS.Joker{ --Rice
         }
     },
     pos = {
-        x = 0,
-        y = 4
+        x = 6,
+        y = 7
     },
     cost = 3,
     rarity = 1,
@@ -27,8 +27,8 @@ SMODS.Joker{ --Rice
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 1,
-        y = 4
+        x = 7,
+        y = 7
     },
 
     calculate = function(self, card, context)

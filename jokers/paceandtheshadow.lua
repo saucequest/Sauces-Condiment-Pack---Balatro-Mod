@@ -17,12 +17,12 @@ SMODS.Joker{ --Pace and The Shadow
         }
     },
     pos = {
-        x = 6,
-        y = 3
+        x = 7,
+        y = 6
     },
     cost = 8,
-    rarity = 3,
-    blueprint_compat = true,
+    rarity = 2,
+    blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,

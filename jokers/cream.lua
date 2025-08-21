@@ -19,8 +19,8 @@ SMODS.Joker{ --Cream
         }
     },
     pos = {
-        x = 2,
-        y = 1
+        x = 4,
+        y = 2
     },
     cost = 7,
     rarity = 2,
@@ -31,8 +31,8 @@ SMODS.Joker{ --Cream
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 3,
-        y = 1
+        x = 5,
+        y = 2
     },
 
     calculate = function(self, card, context)

@@ -20,8 +20,8 @@ SMODS.Joker{ --Dess
         }
     },
     pos = {
-        x = 5,
-        y = 1
+        x = 8,
+        y = 2
     },
     cost = 2,
     rarity = 1,

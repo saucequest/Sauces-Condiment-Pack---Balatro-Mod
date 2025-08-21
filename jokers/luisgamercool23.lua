@@ -20,8 +20,8 @@ SMODS.Joker{ --luisgamercool23
         }
     },
     pos = {
-        x = 7,
-        y = 2
+        x = 5,
+        y = 5
     },
     cost = 7,
     rarity = 2,
@@ -32,8 +32,8 @@ SMODS.Joker{ --luisgamercool23
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 8,
-        y = 2
+        x = 6,
+        y = 5
     },
 
     loc_vars = function(self, info_queue, card)
@@ -49,7 +49,7 @@ SMODS.Joker{ --luisgamercool23
                     x_chips = card.ability.extra.luischips
                 }
         end
-        if context.setting_blind  then
+        if context.setting_blind  and not context.blueprint then
             if G.GAME.round_resets.ante > 5 then
                 return {
                     func = function()

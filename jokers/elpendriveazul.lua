@@ -2,7 +2,8 @@ SMODS.Joker{ --El Pendrive Azul
     key = "elpendriveazul",
     config = {
         extra = {
-            pendrivecountdown = 5,
+            pendrivecountdown = 2,
+            countdownforrealthistime = 5,
             var1 = 0
         }
     },
@@ -10,7 +11,7 @@ SMODS.Joker{ --El Pendrive Azul
         ['name'] = 'El Pendrive Azul',
         ['text'] = {
             [1] = '{X:red,C:white}X#1#{} Mult and {X:blue,C:white}X#1#{} Chips',
-            [2] = 'Destroys itself and a random Joker in {C:red}#1#{} rounds.',
+            [2] = 'Destroys itself and a random Joker in {C:red}#2#{} rounds.',
             [3] = '{C:inactive}\"¡No puedo! ¡NO PUEDO PERDER!\"{}',
             [4] = '{C:inactive}Originates from{} {C:enhanced}El Pendrive Azul{}'
         },
@@ -19,8 +20,8 @@ SMODS.Joker{ --El Pendrive Azul
         }
     },
     pos = {
-        x = 6,
-        y = 1
+        x = 5,
+        y = 3
     },
     cost = 7,
     rarity = 2,
@@ -31,12 +32,12 @@ SMODS.Joker{ --El Pendrive Azul
     discovered = true,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 7,
-        y = 1
+        x = 6,
+        y = 3
     },
 
     loc_vars = function(self, info_queue, card)
-        return {vars = {card.ability.extra.pendrivecountdown}}
+        return {vars = {card.ability.extra.pendrivecountdown, card.ability.extra.countdownforrealthistime}}
     end,
 
     calculate = function(self, card, context)
@@ -49,9 +50,108 @@ SMODS.Joker{ --El Pendrive Azul
                 }
         end
         if context.end_of_round and context.game_over == false and context.main_eval  then
-            if (card.ability.extra.pendrivecountdown or 0) == 0 then
+            if (card.ability.extra.countdownforrealthistime or 0) == 5 then
                 return {
-                    func = function()
+                    message = "Cinco.",
+                    extra = {
+                        func = function()
+                    card.ability.extra.pendrivecountdown = math.max(0, (card.ability.extra.pendrivecountdown) - 0.2)
+                    return true
+                end,
+                        colour = G.C.RED,
+                        extra = {
+                            func = function()
+                    card.ability.extra.countdownforrealthistime = math.max(0, (card.ability.extra.countdownforrealthistime) - 1)
+                    return true
+                end,
+                            colour = G.C.RED
+                        }
+                        }
+                }
+            elseif (card.ability.extra.countdownforrealthistime or 0) == 4 then
+                return {
+                    message = "Quatro.",
+                    extra = {
+                        func = function()
+                    card.ability.extra.pendrivecountdown = math.max(0, (card.ability.extra.pendrivecountdown) - 0.2)
+                    return true
+                end,
+                        colour = G.C.RED,
+                        extra = {
+                            func = function()
+                    card.ability.extra.countdownforrealthistime = math.max(0, (card.ability.extra.countdownforrealthistime) - 1)
+                    return true
+                end,
+                            colour = G.C.RED
+                        }
+                        }
+                }
+            elseif (card.ability.extra.countdownforrealthistime or 0) == 3 then
+                return {
+                    message = "Tres.",
+                    extra = {
+                        func = function()
+                    card.ability.extra.pendrivecountdown = math.max(0, (card.ability.extra.pendrivecountdown) - 0.2)
+                    return true
+                end,
+                        colour = G.C.RED,
+                        extra = {
+                            func = function()
+                    card.ability.extra.countdownforrealthistime = math.max(0, (card.ability.extra.countdownforrealthistime) - 1)
+                    return true
+                end,
+                            colour = G.C.RED
+                        }
+                        }
+                }
+            elseif (card.ability.extra.countdownforrealthistime or 0) == 2 then
+                return {
+                    message = "Dos.",
+                    extra = {
+                        func = function()
+                    card.ability.extra.pendrivecountdown = math.max(0, (card.ability.extra.pendrivecountdown) - 0.2)
+                    return true
+                end,
+                        colour = G.C.RED,
+                        extra = {
+                            func = function()
+                    card.ability.extra.countdownforrealthistime = math.max(0, (card.ability.extra.countdownforrealthistime) - 1)
+                    return true
+                end,
+                            colour = G.C.RED
+                        }
+                        }
+                }
+            elseif (card.ability.extra.countdownforrealthistime or 0) == 1 then
+                return {
+                    message = "Uno",
+                    extra = {
+                        func = function()
+                    card.ability.extra.pendrivecountdown = math.max(0, (card.ability.extra.pendrivecountdown) - 0.2)
+                    return true
+                end,
+                        colour = G.C.RED,
+                        extra = {
+                            func = function()
+                    card.ability.extra.countdownforrealthistime = math.max(0, (card.ability.extra.countdownforrealthistime) - 1)
+                    return true
+                end,
+                            colour = G.C.RED
+                        }
+                        }
+                }
+            elseif (card.ability.extra.countdownforrealthistime or 0) == 0 then
+                return {
+                    message = "Cerro.",
+                    extra = {
+                        func = function()
+                card:start_dissolve()
+                return true
+            end,
+                            message = "Destroyed!",
+                        colour = G.C.RED,
+                        extra = {
+                            func = function()
                 local destructable_jokers = {}
                 for i, joker in ipairs(G.jokers.cards) do
                     if joker ~= card and not joker.ability.eternal and not joker.getting_sliced then
@@ -72,24 +172,11 @@ SMODS.Joker{ --El Pendrive Azul
                 end
                     return true
                 end,
-                    extra = {
-                        func = function()
-                card:start_dissolve()
-                return true
-            end,
-                            message = "Destroyed!",
-                        colour = G.C.RED
+                            colour = G.C.RED
+                        }
                         }
                 }
             end
-        end
-        if context.setting_blind  then
-                return {
-                    func = function()
-                    card.ability.extra.pendrivecountdown = math.max(0, (card.ability.extra.pendrivecountdown) - 1)
-                    return true
-                end
-                }
         end
     end
 }

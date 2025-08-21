@@ -25,8 +25,8 @@ SMODS.Joker{ --The Great Floccinaucinihilipilification
         }
     },
     pos = {
-        x = 1,
-        y = 5
+        x = 4,
+        y = 9
     },
     cost = 8,
     rarity = 3,

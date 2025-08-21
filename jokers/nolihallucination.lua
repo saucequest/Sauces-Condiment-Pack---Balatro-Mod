@@ -21,8 +21,8 @@ SMODS.Joker{ --Noli?
         }
     },
     pos = {
-        x = 5,
-        y = 3
+        x = 6,
+        y = 6
     },
     cost = 0,
     rarity = "sauce_hallucination",
@@ -32,10 +32,14 @@ SMODS.Joker{ --Noli?
     unlocked = false,
     discovered = false,
     atlas = 'CustomJokers',
-
     in_pool = function(self, args)
-        return args.source ~= 'sho'
-    end,
+          return (
+          not args 
+          or args.source ~= 'sho' 
+          or args.source == 'buf' or args.source == 'jud' or args.source == 'rif' or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+          )
+          and true
+      end,
 
     set_ability = function(self, card, initial)
         card:add_sticker('perishable', true)

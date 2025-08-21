@@ -22,7 +22,7 @@ SMODS.Joker{ --Asgores Burgentruck
         }
     },
     pos = {
-        x = 3,
+        x = 6,
         y = 0
     },
     cost = 10,
@@ -35,7 +35,7 @@ SMODS.Joker{ --Asgores Burgentruck
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
+        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  and not context.blueprint then
                 return {
                     func = function()
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Driving in my car right after a beer!", colour = G.C.DARK_EDITION})
