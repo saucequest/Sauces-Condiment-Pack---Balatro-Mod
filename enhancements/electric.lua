@@ -3,15 +3,15 @@ SMODS.Enhancement {
     pos = { x = 2, y = 0 },
     config = {
         extra = {
-            x_chips = 2,
-            x_chips = 2.5
+            x_chips = 1.3,
+            x_chips = 1.5
         }
     },
     loc_txt = {
         name = 'Electric',
         text = {
-        [1] = 'When scored, does {X:chips,C:white}x2{} Chips',
-        [2] = 'If scored in the first hand of the round, gives {X:chips,C:white}x2.5{} Chips'
+        [1] = 'When scored, does {X:chips,C:white}X1.3{} Chips',
+        [2] = 'If scored in the first hand of the round, gives {X:chips,C:white}X1.5{} Chips'
     }
     },
     atlas = 'CustomEnhancements',

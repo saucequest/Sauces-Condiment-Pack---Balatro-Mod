@@ -66,7 +66,7 @@ end)() then
             end
         end
         if context.cardarea == G.jokers and context.joker_main  then
-            if (card.ability.extra.sadcardsplayed or 0) == 10 then
+            if (card.ability.extra.sadcardsplayed or 0) >= 7 then
                 card.ability.extra.sadorhappy = 0
             end
         end
