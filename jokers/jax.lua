@@ -21,9 +21,11 @@ SMODS.Joker{ --Jax
             booster_slots = 0,
             joker_slots = 1,
             odds4 = 4,
+            jax_keys = 0,
             permanent = 0,
             no = 0,
-            var1 = 0
+            var1 = 0,
+            jax_shop = 0
         }
     },
     loc_txt = {
@@ -38,7 +40,7 @@ SMODS.Joker{ --Jax
         }
     },
     pos = {
-        x = 5,
+        x = 4,
         y = 6
     },
     display_size = {
@@ -54,7 +56,7 @@ SMODS.Joker{ --Jax
     discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
+        x = 5,
         y = 6
     },
 
@@ -77,6 +79,7 @@ SMODS.Joker{ --Jax
         end
         if context.setting_blind  then
             if true then
+                play_sound("sauce_jax_keys")
                 if SMODS.pseudorandom_probability(card, 'group_0_c40631bc', 1, card.ability.extra.odds, 'j_sauce_jax', false) then
               SMODS.calculate_effect({func = function()
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Set to "..tostring(card.ability.extra.hands).." Hands", colour = G.C.BLUE})
@@ -195,6 +198,7 @@ SMODS.Joker{ --Jax
         end
         if context.starting_shop  then
             if true then
+                play_sound("sauce_jax_shop")
                 if SMODS.pseudorandom_probability(card, 'group_0_6805f767', 1, card.ability.extra.odds, 'j_sauce_jax', false) then
               SMODS.calculate_effect({func = function()
                 G.E_MANAGER:add_event(Event({func = function()

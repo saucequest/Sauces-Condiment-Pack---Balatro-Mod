@@ -4,7 +4,11 @@ SMODS.Joker{ --Noli
         extra = {
             xchips = 2.01,
             odds = 4,
-            Xmult = 0.8
+            Xmult = 0.8,
+            noli_taunt = 0,
+            noli_stun = 0,
+            noli_intro = 0,
+            noli_outro = 0
         }
     },
     loc_txt = {
@@ -22,7 +26,7 @@ SMODS.Joker{ --Noli
         }
     },
     pos = {
-        x = 3,
+        x = 2,
         y = 9
     },
     display_size = {
@@ -53,6 +57,7 @@ SMODS.Joker{ --Noli
                           return true
                       end
                   }))
+                play_sound("sauce_noli_taunt")
                 return {
                     x_chips = card.ability.extra.xchips,
                     extra = {
@@ -62,12 +67,19 @@ SMODS.Joker{ --Noli
                 ,
                     func = function()
                         if SMODS.pseudorandom_probability(card, 'group_0_e103e172', 1, card.ability.extra.odds, 'j_sauce_noli', false) then
-              SMODS.calculate_effect({Xmult = card.ability.extra.Xmult}, card)
+              play_sound("sauce_noli_stun")
+                        SMODS.calculate_effect({Xmult = card.ability.extra.Xmult}, card)
           end
                         return true
                     end
                 }
             end
+        end
+        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
+                play_sound("sauce_noli_intro")
+        end
+        if context.selling_self  then
+                play_sound("sauce_noli_outro")
         end
     end
 }

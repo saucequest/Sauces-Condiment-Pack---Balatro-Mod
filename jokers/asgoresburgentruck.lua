@@ -3,8 +3,10 @@ SMODS.Joker{ --Asgores Burgentruck
     config = {
         extra = {
             joker_slots = 1,
+            asgore_song = 0,
             ignore = 0,
-            var1 = 0
+            var1 = 0,
+            no = 0
         }
     },
     loc_txt = {
@@ -12,7 +14,7 @@ SMODS.Joker{ --Asgores Burgentruck
         ['text'] = {
             [1] = 'Adds a Joker slot when bought',
             [2] = 'When cards are discarded, adds a Dess to your Jokers',
-            [3] = 'Destroys 2 Desses in your Jokers when hand is done scoring',
+            [3] = 'Destroys all Desses in your Jokers when hand is done scoring',
             [4] = '',
             [5] = '{C:inactive}\"Driving in my car right after a beer!\"{}',
             [6] = '{C:inactive}Originates from{} {C:common}DELTARUNE{}',
@@ -41,6 +43,7 @@ SMODS.Joker{ --Asgores Burgentruck
 
     calculate = function(self, card, context)
         if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  and not context.blueprint then
+                play_sound("sauce_asgore_song")
                 return {
                     func = function()
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Driving in my car right after a beer!", colour = G.C.DARK_EDITION})
@@ -94,7 +97,151 @@ SMODS.Joker{ --Asgores Burgentruck
                     card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "DUI? How about you die?", colour = G.C.RED})
                 end
                     return true
+                end,
+                    extra = {
+                        func = function()
+                local target_joker = nil
+                for i, joker in ipairs(G.jokers.cards) do
+                    if joker.config.center.key == "j_sauce_dess" and not joker.ability.eternal and not joker.getting_sliced then
+                        target_joker = joker
+                        break
+                    end
                 end
+                
+                if target_joker then
+                    target_joker.getting_sliced = true
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            target_joker:start_dissolve({G.C.RED}, nil, 1.6)
+                            return true
+                        end
+                    }))
+                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Destroyed!", colour = G.C.RED})
+                end
+                    return true
+                end,
+                        colour = G.C.RED,
+                        extra = {
+                            func = function()
+                local target_joker = nil
+                for i, joker in ipairs(G.jokers.cards) do
+                    if joker.config.center.key == "j_sauce_dess" and not joker.ability.eternal and not joker.getting_sliced then
+                        target_joker = joker
+                        break
+                    end
+                end
+                
+                if target_joker then
+                    target_joker.getting_sliced = true
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            target_joker:start_dissolve({G.C.RED}, nil, 1.6)
+                            return true
+                        end
+                    }))
+                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Destroyed!", colour = G.C.RED})
+                end
+                    return true
+                end,
+                            colour = G.C.RED,
+                        extra = {
+                            func = function()
+                local target_joker = nil
+                for i, joker in ipairs(G.jokers.cards) do
+                    if joker.config.center.key == "j_sauce_dess" and not joker.ability.eternal and not joker.getting_sliced then
+                        target_joker = joker
+                        break
+                    end
+                end
+                
+                if target_joker then
+                    target_joker.getting_sliced = true
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            target_joker:start_dissolve({G.C.RED}, nil, 1.6)
+                            return true
+                        end
+                    }))
+                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Destroyed!", colour = G.C.RED})
+                end
+                    return true
+                end,
+                            colour = G.C.RED,
+                        extra = {
+                            func = function()
+                local target_joker = nil
+                for i, joker in ipairs(G.jokers.cards) do
+                    if joker.config.center.key == "j_sauce_dess" and not joker.ability.eternal and not joker.getting_sliced then
+                        target_joker = joker
+                        break
+                    end
+                end
+                
+                if target_joker then
+                    target_joker.getting_sliced = true
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            target_joker:start_dissolve({G.C.RED}, nil, 1.6)
+                            return true
+                        end
+                    }))
+                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Destroyed!", colour = G.C.RED})
+                end
+                    return true
+                end,
+                            colour = G.C.RED,
+                        extra = {
+                            func = function()
+                local target_joker = nil
+                for i, joker in ipairs(G.jokers.cards) do
+                    if joker.config.center.key == "j_sauce_dess" and not joker.ability.eternal and not joker.getting_sliced then
+                        target_joker = joker
+                        break
+                    end
+                end
+                
+                if target_joker then
+                    target_joker.getting_sliced = true
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            target_joker:start_dissolve({G.C.RED}, nil, 1.6)
+                            return true
+                        end
+                    }))
+                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Destroyed!", colour = G.C.RED})
+                end
+                    return true
+                end,
+                            colour = G.C.RED,
+                        extra = {
+                            func = function()
+                local target_joker = nil
+                for i, joker in ipairs(G.jokers.cards) do
+                    if joker.config.center.key == "j_sauce_dess" and not joker.ability.eternal and not joker.getting_sliced then
+                        target_joker = joker
+                        break
+                    end
+                end
+                
+                if target_joker then
+                    target_joker.getting_sliced = true
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            target_joker:start_dissolve({G.C.RED}, nil, 1.6)
+                            return true
+                        end
+                    }))
+                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Destroyed!", colour = G.C.RED})
+                end
+                    return true
+                end,
+                            colour = G.C.RED
+                        }
+                        }
+                        }
+                        }
+                        }
+                        }
                 }
         end
     end

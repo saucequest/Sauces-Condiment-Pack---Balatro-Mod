@@ -18,7 +18,7 @@ SMODS.Joker{ --Sonic the Hedgehog
         }
     },
     pos = {
-        x = 7,
+        x = 6,
         y = 11
     },
     display_size = {
@@ -34,7 +34,7 @@ SMODS.Joker{ --Sonic the Hedgehog
     discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 8,
+        x = 7,
         y = 11
     },
 

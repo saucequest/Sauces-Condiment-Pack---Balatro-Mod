@@ -2,6 +2,7 @@ SMODS.Joker{ --Cinderblock
     key = "cinderblock",
     config = {
         extra = {
+            cinderblock = 0
         }
     },
     loc_txt = {
@@ -52,6 +53,7 @@ SMODS.Joker{ --Cinderblock
                         return true
                     end
                 }))
+                play_sound("sauce_cinderblock")
                 return {
                     message = "Hey Watson, cinderblock!"
                 }

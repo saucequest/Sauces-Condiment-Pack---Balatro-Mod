@@ -5,7 +5,8 @@ SMODS.Joker{ --Springtrap
             no = 0,
             var1 = 0,
             eternal = 0,
-            respect = 0
+            respect = 0,
+            springtrap_scream = 0
         }
     },
     loc_txt = {
@@ -21,7 +22,7 @@ SMODS.Joker{ --Springtrap
         }
     },
     pos = {
-        x = 9,
+        x = 8,
         y = 11
     },
     display_size = {
@@ -37,8 +38,8 @@ SMODS.Joker{ --Springtrap
     discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 0,
-        y = 12
+        x = 9,
+        y = 11
     },
 
     set_ability = function(self, card, initial)
@@ -47,6 +48,7 @@ SMODS.Joker{ --Springtrap
 
     calculate = function(self, card, context)
         if context.setting_blind  then
+                play_sound("sauce_springtrap_scream")
                 return {
                     func = function()
                 local destructable_jokers = {}

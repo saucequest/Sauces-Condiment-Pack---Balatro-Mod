@@ -4,6 +4,7 @@ SMODS.Joker{ --Shadow the Hedgehog
         extra = {
             gunjokerpool = 0,
             respect = 0,
+            fourth_emerald = 0,
             gun = 0
         }
     },
@@ -20,7 +21,7 @@ SMODS.Joker{ --Shadow the Hedgehog
         }
     },
     pos = {
-        x = 1,
+        x = 0,
         y = 11
     },
     display_size = {
@@ -36,12 +37,13 @@ SMODS.Joker{ --Shadow the Hedgehog
     discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 2,
+        x = 1,
         y = 11
     },
 
     calculate = function(self, card, context)
         if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
+                play_sound("sauce_fourth_emerald")
                 return {
                     func = function()
             local created_joker = false

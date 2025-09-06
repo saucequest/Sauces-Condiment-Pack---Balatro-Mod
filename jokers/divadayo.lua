@@ -2,6 +2,9 @@ SMODS.Joker{ --Divadayo
     key = "divadayo",
     config = {
         extra = {
+            divadayo_release = 0,
+            divadayo_buy = 0,
+            divadayo_sell = 0
         }
     },
     loc_txt = {
@@ -16,8 +19,8 @@ SMODS.Joker{ --Divadayo
         }
     },
     pos = {
-        x = 0,
-        y = 4
+        x = 9,
+        y = 3
     },
     display_size = {
         w = 71 * 1, 
@@ -36,10 +39,17 @@ SMODS.Joker{ --Divadayo
         if context.individual and context.cardarea == G.play  then
             if context.other_card:get_id() == 12 then
                 context.other_card:set_seal("Blue", true)
+                play_sound("sauce_divadayo_release")
                 return {
                     message = "Card Modified!"
                 }
             end
+        end
+        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
+                play_sound("sauce_divadayo_buy")
+        end
+        if context.selling_self  then
+                play_sound("sauce_divadayo_sell")
         end
     end
 }

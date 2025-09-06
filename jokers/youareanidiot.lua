@@ -2,7 +2,8 @@ SMODS.Joker{ --You Are An Idiot!
     key = "youareanidiot",
     config = {
         extra = {
-            idiot = 1.5
+            idiot = 1.5,
+            yaai = 0
         }
     },
     loc_txt = {
@@ -23,7 +24,7 @@ SMODS.Joker{ --You Are An Idiot!
         }
     },
     pos = {
-        x = 5,
+        x = 4,
         y = 13
     },
     display_size = {
@@ -39,7 +40,7 @@ SMODS.Joker{ --You Are An Idiot!
     discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
+        x = 5,
         y = 13
     },
 
@@ -50,6 +51,7 @@ SMODS.Joker{ --You Are An Idiot!
     calculate = function(self, card, context)
         if context.pre_discard  then
             if #context.full_hand <= 2 then
+                play_sound("sauce_yaai")
                 return {
                     func = function()
                     card.ability.extra.idiot = (card.ability.extra.idiot) + 0.2
@@ -61,6 +63,7 @@ SMODS.Joker{ --You Are An Idiot!
         if context.cardarea == G.jokers and context.joker_main  then
             if context.scoring_name == "High Card" then
                 card.ability.extra.idiot = (card.ability.extra.idiot) + 0.3
+                play_sound("sauce_yaai")
             elseif context.scoring_name == "High Card" then
                 card.ability.extra.idiot = math.max(0, (card.ability.extra.idiot) - 0.2)
             else

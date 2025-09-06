@@ -3,7 +3,8 @@ SMODS.Joker{ --Chara
     config = {
         extra = {
             killcount = 1,
-            rerollmult = 0.1
+            rerollmult = 0.1,
+            chara_noise = 0
         }
     },
     loc_txt = {
@@ -48,6 +49,7 @@ SMODS.Joker{ --Chara
 
     calculate = function(self, card, context)
         if context.end_of_round and context.game_over == false and context.main_eval  and not context.blueprint then
+                play_sound("sauce_chara_noise")
                 return {
                     func = function()
                 local destructable_jokers = {}

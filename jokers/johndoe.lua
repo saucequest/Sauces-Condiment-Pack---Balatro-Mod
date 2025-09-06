@@ -2,7 +2,8 @@ SMODS.Joker{ --John Doe
     key = "johndoe",
     config = {
         extra = {
-            chips = 30
+            chips = 30,
+            john_roar = 0
         }
     },
     loc_txt = {
@@ -18,7 +19,7 @@ SMODS.Joker{ --John Doe
         }
     },
     pos = {
-        x = 7,
+        x = 6,
         y = 6
     },
     display_size = {
@@ -42,6 +43,7 @@ SMODS.Joker{ --John Doe
                 }
             elseif context.other_card == context.scoring_hand[#context.scoring_hand] then
                 context.other_card:set_ability(G.P_CENTERS.m_sauce_corrupted)
+                play_sound("sauce_john_roar")
                 return {
                     message = "Card Modified!"
                 }

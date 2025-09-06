@@ -3,7 +3,9 @@ SMODS.Joker{ --Noli?
     config = {
         extra = {
             chips = 201,
-            mult = 0.8
+            mult = 0.8,
+            noli_taunt = 0,
+            sike_noli = 0
         }
     },
     loc_txt = {
@@ -21,7 +23,7 @@ SMODS.Joker{ --Noli?
         }
     },
     pos = {
-        x = 4,
+        x = 3,
         y = 9
     },
     display_size = {
@@ -51,12 +53,16 @@ SMODS.Joker{ --Noli?
 
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
+                play_sound("sauce_noli_taunt")
                 return {
                     chips = card.ability.extra.chips,
                     extra = {
                         mult = card.ability.extra.mult
                         }
                 }
+        end
+        if context.selling_self  then
+                play_sound("sauce_sike_noli")
         end
     end
 }

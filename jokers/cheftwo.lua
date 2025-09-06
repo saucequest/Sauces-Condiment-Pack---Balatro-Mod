@@ -2,7 +2,8 @@ SMODS.Joker{ --Chef Two
     key = "cheftwo",
     config = {
         extra = {
-            consumable_slots = 2
+            consumable_slots = 2,
+            two_scream = 0
         }
     },
     loc_txt = {
@@ -75,6 +76,9 @@ SMODS.Joker{ --Chef Two
                         colour = G.C.BLUE
                         }
                 }
+        end
+        if context.selling_self  then
+                play_sound("sauce_two_scream")
         end
     end
 }

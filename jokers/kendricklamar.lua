@@ -64,7 +64,8 @@ SMODS.Joker{ --Kendrick Lamar
             Xmult60 = 1.4,
             Xmult61 = 1.4,
             Xmult62 = 1.8,
-            Xmult63 = 1.4
+            Xmult63 = 1.4,
+            mustard = 0
         }
     },
     loc_txt = {
@@ -80,7 +81,7 @@ SMODS.Joker{ --Kendrick Lamar
         }
     },
     pos = {
-        x = 1,
+        x = 0,
         y = 7
     },
     display_size = {
@@ -477,6 +478,9 @@ SMODS.Joker{ --Kendrick Lamar
                     Xmult = card.ability.extra.Xmult63
                 }
             end
+        end
+        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
+                play_sound("sauce_mustard")
         end
     end
 }

@@ -3,9 +3,11 @@ SMODS.Joker{ --Metal Sonic
     config = {
         extra = {
             electricmeter = 0,
+            dead_or_alive = 0,
             no = 0,
             var1 = 0,
-            respect = 0
+            respect = 0,
+            metal_laugh = 0
         }
     },
     loc_txt = {
@@ -30,7 +32,7 @@ SMODS.Joker{ --Metal Sonic
         }
     },
     pos = {
-        x = 3,
+        x = 2,
         y = 8
     },
     display_size = {
@@ -46,7 +48,7 @@ SMODS.Joker{ --Metal Sonic
     discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 4,
+        x = 3,
         y = 8
     },
 
@@ -93,6 +95,7 @@ SMODS.Joker{ --Metal Sonic
                         return true
                     end
                 }))
+                play_sound("sauce_dead_or_alive")
                 return {
                     message = "Added Card!",
                     extra = {
@@ -146,6 +149,9 @@ SMODS.Joker{ --Metal Sonic
                     message = created_joker and localize('k_plus_joker') or nil
                 }
             end
+        end
+        if context.end_of_round and context.game_over and context.main_eval  then
+                play_sound("sauce_metal_laugh")
         end
     end
 }

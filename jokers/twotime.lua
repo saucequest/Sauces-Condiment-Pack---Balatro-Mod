@@ -2,7 +2,9 @@ SMODS.Joker{ --Two Time
     key = "twotime",
     config = {
         extra = {
-            var1 = 0
+            tt_respawn = 0,
+            var1 = 0,
+            tt_dagger = 0
         }
     },
     loc_txt = {
@@ -18,7 +20,7 @@ SMODS.Joker{ --Two Time
         }
     },
     pos = {
-        x = 7,
+        x = 6,
         y = 12
     },
     display_size = {
@@ -36,6 +38,8 @@ SMODS.Joker{ --Two Time
 
     calculate = function(self, card, context)
         if context.end_of_round and context.game_over and context.main_eval  then
+                play_sound("sauce_tt_respawn")
+                play_sound("sauce_tt_dagger")
                 return {
                     saved = true,
                     message = localize('k_saved_ex'),

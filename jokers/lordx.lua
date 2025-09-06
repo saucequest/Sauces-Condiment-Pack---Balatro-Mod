@@ -2,7 +2,10 @@ SMODS.Joker{ --Lord X
     key = "lordx",
     config = {
         extra = {
-            lordsmult = 1.5
+            lordsmult = 1.5,
+            lord_x_laugh = 0,
+            welcome_back = 0,
+            lord_x_sold = 0
         }
     },
     loc_txt = {
@@ -18,7 +21,7 @@ SMODS.Joker{ --Lord X
         }
     },
     pos = {
-        x = 8,
+        x = 7,
         y = 7
     },
     display_size = {
@@ -34,7 +37,7 @@ SMODS.Joker{ --Lord X
     discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 9,
+        x = 8,
         y = 7
     },
 
@@ -51,12 +54,19 @@ SMODS.Joker{ --Lord X
             end
         end
         if context.end_of_round and context.game_over == false and context.main_eval  then
+                play_sound("sauce_lord_x_laugh")
                 return {
                     func = function()
                     card.ability.extra.lordsmult = (card.ability.extra.lordsmult) + 0.1
                     return true
                 end
                 }
+        end
+        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
+                play_sound("sauce_welcome_back")
+        end
+        if context.selling_self  then
+                play_sound("sauce_lord_x_sold")
         end
     end
 }

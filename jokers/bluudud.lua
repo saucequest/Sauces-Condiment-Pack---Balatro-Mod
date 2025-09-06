@@ -2,7 +2,9 @@ SMODS.Joker{ --bluudud
     key = "bluudud",
     config = {
         extra = {
-            chips = 50
+            chips = 50,
+            bluudud_buy = 0,
+            bluudud_cough = 0
         }
     },
     loc_txt = {
@@ -46,6 +48,12 @@ SMODS.Joker{ --bluudud
                     message = "Card Modified!"
                 }
             end
+        end
+        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
+                play_sound("sauce_bluudud_buy")
+        end
+        if context.selling_self  then
+                play_sound("sauce_bluudud_cough")
         end
     end
 }
