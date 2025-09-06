@@ -11,8 +11,8 @@ SMODS.Joker{ --DONT PLAY BALATRO AT 3 AM?!?!?!??!
     loc_txt = {
         ['name'] = 'DONT PLAY BALATRO AT 3 AM?!?!?!??!',
         ['text'] = {
-            [1] = 'If playing game at exactly 3:00 AM, give {X:mult,C:white}X3{} Mult',
-            [2] = '{C:green}1 in 3{} chance to give {X:mult,C:white}X30{} Mult if playing at 3:00 AM',
+            [1] = 'If playing game at 3:00 AM to 3:59 AM, give {X:mult,C:white}X3{} Mult',
+            [2] = '{C:green}1 in 3{} chance to give {X:mult,C:white}X30{} Mult if playing at 3:00 AM to 3:59 AM',
             [3] = '{C:inactive}(yes this really works){}'
         },
         ['unlock'] = {
@@ -20,8 +20,12 @@ SMODS.Joker{ --DONT PLAY BALATRO AT 3 AM?!?!?!??!
         }
     },
     pos = {
-        x = 3,
-        y = 3
+        x = 5,
+        y = 4
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 7,
     rarity = 3,
@@ -29,7 +33,7 @@ SMODS.Joker{ --DONT PLAY BALATRO AT 3 AM?!?!?!??!
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
@@ -39,9 +43,9 @@ SMODS.Joker{ --DONT PLAY BALATRO AT 3 AM?!?!?!??!
                     Xmult = card.ability.extra.Xmult
                 ,
                     func = function()
-                        if SMODS.pseudorandom_probability(card, 'group_0_c1a5c0e7', 1, card.ability.extra.odds, 'j_sauce_dontplaybalatroat3am') then
-                      SMODS.calculate_effect({Xmult = card.ability.extra.Xmult2}, card)
-                  end
+                        if SMODS.pseudorandom_probability(card, 'group_0_c1a5c0e7', 1, card.ability.extra.odds, 'j_sauce_dontplaybalatroat3am', false) then
+              SMODS.calculate_effect({Xmult = card.ability.extra.Xmult2}, card)
+          end
                         return true
                     end
                 }

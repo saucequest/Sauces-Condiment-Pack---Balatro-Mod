@@ -11,20 +11,24 @@ SMODS.Joker{ --a tale of two lovebirds
             [1] = 'we\'re broken apart yet again.'
         },
         ['unlock'] = {
-            [1] = 'Unlocked by default.'
+            [1] = ''
         }
     },
     pos = {
-        x = 3,
+        x = 4,
         y = 0
     },
-    cost = 36,
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
+    cost = 0,
     rarity = "sauce_unnatural",
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     in_pool = function(self, args)
           return (

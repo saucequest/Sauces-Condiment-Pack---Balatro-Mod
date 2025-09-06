@@ -18,8 +18,12 @@ SMODS.Joker{ --Chaos Emerald
         }
     },
     pos = {
-        x = 7,
-        y = 1
+        x = 2,
+        y = 2
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 5,
     rarity = 2,
@@ -27,14 +31,14 @@ SMODS.Joker{ --Chaos Emerald
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
         if context.selling_self  then
             if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_f95498c3', 1, card.ability.extra.odds, 'j_sauce_chaosemerald') then
-                      SMODS.calculate_effect({func = function()
+                if SMODS.pseudorandom_probability(card, 'group_0_f95498c3', 1, card.ability.extra.odds, 'j_sauce_chaosemerald', false) then
+              SMODS.calculate_effect({func = function()
                     local mod = card.ability.extra.ante_value
 		ease_ante(mod)
 		G.E_MANAGER:add_event(Event({
@@ -46,7 +50,7 @@ SMODS.Joker{ --Chaos Emerald
                     return true
                 end}, card)
                         card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Ante +" .. card.ability.extra.ante_value, colour = G.C.FILTER})
-                  end
+          end
             end
         end
         if context.pseudorandom_result  then

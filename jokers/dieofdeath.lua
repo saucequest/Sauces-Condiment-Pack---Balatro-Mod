@@ -20,8 +20,12 @@ SMODS.Joker{ --Die of Death
         }
     },
     pos = {
-        x = 9,
-        y = 2
+        x = 7,
+        y = 3
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 6,
     rarity = 2,
@@ -29,7 +33,7 @@ SMODS.Joker{ --Die of Death
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     loc_vars = function(self, info_queue, card)
@@ -40,8 +44,8 @@ SMODS.Joker{ --Die of Death
     calculate = function(self, card, context)
         if context.other_joker  and not context.blueprint then
             if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_16da66c3', 1, card.ability.extra.odds, 'j_sauce_dieofdeath') then
-                      SMODS.calculate_effect({func = function()
+                if SMODS.pseudorandom_probability(card, 'group_0_16da66c3', 1, card.ability.extra.odds, 'j_sauce_dieofdeath', false) then
+              SMODS.calculate_effect({func = function()
                 local destructable_jokers = {}
                 for i, joker in ipairs(G.jokers.cards) do
                     if joker ~= card and not joker.ability.eternal and not joker.getting_sliced then
@@ -66,7 +70,7 @@ SMODS.Joker{ --Die of Death
                     card.ability.extra.xmult = (card.ability.extra.xmult) + 0.5
                     return true
                 end}, card)
-                  end
+          end
             end
         end
         if context.cardarea == G.jokers and context.joker_main  then

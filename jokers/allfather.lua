@@ -2,8 +2,7 @@ SMODS.Joker{ --All-Father
     key = "allfather",
     config = {
         extra = {
-            Xmult = 1.6,
-            Xmult2 = 1.6
+            Xmult = 1.6
         }
     },
     loc_txt = {
@@ -18,8 +17,12 @@ SMODS.Joker{ --All-Father
         }
     },
     pos = {
-        x = 5,
+        x = 6,
         y = 0
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 7,
     rarity = 3,
@@ -27,36 +30,33 @@ SMODS.Joker{ --All-Father
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
         if context.other_joker  then
             if ((function()
-    return context.other_joker.config.center.rarity == undefined
-end)() or (function()
-    return context.other_joker.config.center.rarity == undefined
-end)() and (function()
-    return context.other_joker.config.center.rarity == undefined
-end)()) then
-                return {
-                    Xmult = card.ability.extra.Xmult
-                }
-            elseif ((function()
         return context.other_joker.config.center.key == "j_sauce_elpendriveazul"
     end)() or (function()
         return context.other_joker.config.center.key == "j_sauce_2011x"
-    end)() and (function()
+    end)() or (function()
         return context.other_joker.config.center.key == "j_sauce_end"
-    end)() and (function()
+    end)() or (function()
         return context.other_joker.config.center.key == "j_sauce_indigo"
-    end)() and (function()
+    end)() or (function()
         return context.other_joker.config.center.key == "j_sauce_niku"
-    end)() and (function()
+    end)() or (function()
         return context.other_joker.config.center.key == "j_sauce_paceandtheshadow"
-    end)()) then
+    end)() or (function()
+      for i = 1, #G.jokers.cards do
+          if G.jokers.cards[i].config.center.key == "j_sauce_2017x" then
+              return true
+          end
+      end
+      return false
+  end)()) then
                 return {
-                    Xmult = card.ability.extra.Xmult2
+                    Xmult = card.ability.extra.Xmult
                 }
             end
         end

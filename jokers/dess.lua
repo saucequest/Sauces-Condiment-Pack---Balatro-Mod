@@ -3,14 +3,14 @@ SMODS.Joker{ --Dess
     config = {
         extra = {
             chips = 25,
-            dollars = 10
+            dollars = 3
         }
     },
     loc_txt = {
         ['name'] = 'Dess',
         ['text'] = {
             [1] = '{C:blue}+25{} Chips when card scored',
-            [2] = 'When a card is destroyed, gives {C:money}$10{}',
+            [2] = 'When a card is destroyed, gives {C:money}$3{}',
             [3] = '',
             [4] = '{C:inactive}\"Are those headlights? Can\'t you see\"{}',
             [5] = '{C:inactive}Originates from {}{C:common}DELTARUNE{}'
@@ -20,8 +20,12 @@ SMODS.Joker{ --Dess
         }
     },
     pos = {
-        x = 8,
-        y = 2
+        x = 6,
+        y = 3
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 2,
     rarity = 1,
@@ -29,7 +33,7 @@ SMODS.Joker{ --Dess
     eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     set_ability = function(self, card, initial)

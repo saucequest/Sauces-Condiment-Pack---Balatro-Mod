@@ -2,7 +2,8 @@ SMODS.Joker{ --Azure
     key = "azure",
     config = {
         extra = {
-            dollars = 3
+            dollars = 3,
+            ignore = 0
         }
     },
     loc_txt = {
@@ -10,7 +11,7 @@ SMODS.Joker{ --Azure
         ['text'] = {
             [1] = 'When a card is destroyed, deducts {C:money}$3{}',
             [2] = 'When a boss blind is defeated, adds a random consumable',
-            [3] = 'and a random {C:dark_edition}Negative {} {C:rare}Rare{} Joker',
+            [3] = 'and a random {C:dark_edition}{} {C:rare}Rare{} Joker',
             [4] = '',
             [5] = '{C:inactive}\"what have you done...?\"{}',
             [6] = '{C:inactive}Originates from{} {C:spades}FORSAKEN{}'
@@ -20,8 +21,12 @@ SMODS.Joker{ --Azure
         }
     },
     pos = {
-        x = 7,
+        x = 9,
         y = 0
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 9,
     rarity = 3,
@@ -29,7 +34,7 @@ SMODS.Joker{ --Azure
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
@@ -61,10 +66,7 @@ SMODS.Joker{ --Azure
                 end,
                     extra = {
                         func = function()
-            local created_joker = false
-    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-        created_joker = true
-        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
                     local joker_card = SMODS.add_card({ set = 'Joker', rarity = 'Rare' })
@@ -72,11 +74,11 @@ SMODS.Joker{ --Azure
                         
                         
                     end
-                    G.GAME.joker_buffer = 0
+                    
                     return true
                 end
             }))
-            end
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end

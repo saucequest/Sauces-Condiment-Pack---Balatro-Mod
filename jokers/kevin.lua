@@ -3,13 +3,14 @@ SMODS.Joker{ --Kevin
     config = {
         extra = {
             dollars = 5,
-            xchips = 1.2
+            xchips = 1.2,
+            ignore = 0
         }
     },
     loc_txt = {
         ['name'] = 'Kevin',
         ['text'] = {
-            [1] = 'Adds a {C:dark_edition}Negative{} pizza to your Jokers',
+            [1] = 'Adds a {C:dark_edition}{} Pizza to your Jokers',
             [2] = 'Gives {C:gold}$5{} for each card discarded,',
             [3] = 'and gives {X:chips,C:white} x1.2{} Chips',
             [4] = '',
@@ -21,8 +22,12 @@ SMODS.Joker{ --Kevin
         }
     },
     pos = {
-        x = 9,
-        y = 4
+        x = 2,
+        y = 7
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 5,
     rarity = 2,
@@ -30,7 +35,7 @@ SMODS.Joker{ --Kevin
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
@@ -52,7 +57,7 @@ SMODS.Joker{ --Kevin
                 func = function()
                     local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_pizza' })
                     if joker_card then
-                        joker_card:set_edition("e_negative", true)
+                        
                         
                     end
                     

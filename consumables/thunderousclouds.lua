@@ -1,6 +1,6 @@
 SMODS.Consumable {
     key = 'thunderousclouds',
-    set = 'Tarot',
+    set = 'Spectral',
     pos = { x = 4, y = 0 },
     loc_txt = {
         name = 'Thunderous Clouds',

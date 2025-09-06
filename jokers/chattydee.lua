@@ -3,14 +3,15 @@ SMODS.Joker{ --Chatty Dee
     config = {
         extra = {
             xchips = 1.2,
-            Xmult = 1.2
+            Xmult = 1.2,
+            ignore = 0
         }
     },
     loc_txt = {
         ['name'] = 'Chatty Dee',
         ['text'] = {
             [1] = '{X:mult,C:white}x1.2{} Mult and {X:chips,C:white}x1.2{} Chips',
-            [2] = 'Creates a {C:dark_edition}Negative{} copy of itself whenever shop is rerolled.',
+            [2] = 'Creates a {C:dark_edition}{} copy of itself whenever shop is rerolled.',
             [3] = '',
             [4] = '{C:inactive}\"What in tarnation is that?\"{}',
             [5] = '{C:inactive}Originates from{} {C:gold}Failboat{}',
@@ -22,8 +23,12 @@ SMODS.Joker{ --Chatty Dee
         }
     },
     pos = {
-        x = 0,
+        x = 5,
         y = 2
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 20,
     rarity = 4,
@@ -31,7 +36,7 @@ SMODS.Joker{ --Chatty Dee
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     in_pool = function(self, args)
           return (
@@ -59,7 +64,7 @@ SMODS.Joker{ --Chatty Dee
                 func = function()
                     local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_chattydee' })
                     if joker_card then
-                        joker_card:set_edition("e_negative", true)
+                        
                         
                     end
                     

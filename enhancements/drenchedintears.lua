@@ -1,16 +1,16 @@
 SMODS.Enhancement {
     key = 'drenchedintears',
-    pos = { x = 1, y = 0 },
+    pos = { x = 2, y = 0 },
     config = {
         extra = {
-            x_chips = 0.95
+            x_chips = 0.95,
+            dollars = 1
         }
     },
     loc_txt = {
         name = 'Drenched in Tears',
         text = {
-        [1] = '{X:chips,C:white}x0.95{} Chips',
-        [2] = ''
+        [1] = '{X:chips,C:white}x0.95{} Chips and {C:money}-$1{}'
     }
     },
     atlas = 'CustomEnhancements',
@@ -22,9 +22,10 @@ SMODS.Enhancement {
     unlocked = true,
     discovered = true,
     no_collection = false,
+    weight = 5,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
-            return { x_chips = card.ability.extra.x_chips }
+            return { x_chips = card.ability.extra.x_chips, dollars = -lenient_bignum(card.ability.extra.dollars) }
         end
     end
 }

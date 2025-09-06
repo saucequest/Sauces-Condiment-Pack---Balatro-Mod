@@ -4,6 +4,7 @@ SMODS.Joker{ --2011X
         extra = {
             sonicexemult = 1,
             timer = 6,
+            exe_laugh = 0,
             respect = 0
         }
     },
@@ -26,13 +27,17 @@ SMODS.Joker{ --2011X
         x = 1,
         y = 0
     },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
     cost = 11,
     rarity = 3,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
         x = 2,
@@ -53,6 +58,7 @@ SMODS.Joker{ --2011X
                 }
         end
         if context.cardarea == G.jokers and context.joker_main  then
+                play_sound("sauce_exe_laugh")
                 return {
                     Xmult = card.ability.extra.sonicexemult
                 }

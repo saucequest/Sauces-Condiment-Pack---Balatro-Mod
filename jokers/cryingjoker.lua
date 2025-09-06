@@ -14,8 +14,12 @@ SMODS.Joker{ --Crying Joker
         }
     },
     pos = {
-        x = 7,
-        y = 2
+        x = 4,
+        y = 3
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 1,
     rarity = "sauce_cursed",
@@ -23,7 +27,7 @@ SMODS.Joker{ --Crying Joker
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)

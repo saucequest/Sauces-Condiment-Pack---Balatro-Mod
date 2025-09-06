@@ -18,8 +18,12 @@ SMODS.Joker{ --Chef Two
         }
     },
     pos = {
-        x = 1,
+        x = 6,
         y = 2
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 2,
@@ -27,10 +31,10 @@ SMODS.Joker{ --Chef Two
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 2,
+        x = 7,
         y = 2
     },
 

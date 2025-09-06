@@ -24,8 +24,12 @@ SMODS.Joker{ --END
         }
     },
     pos = {
-        x = 7,
-        y = 3
+        x = 0,
+        y = 5
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 6,
     rarity = 1,
@@ -33,7 +37,7 @@ SMODS.Joker{ --END
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     loc_vars = function(self, info_queue, card)
@@ -53,8 +57,8 @@ SMODS.Joker{ --END
         end
         if context.end_of_round and context.game_over == false and context.main_eval  then
             if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_ee8c8c09', 1, card.ability.extra.odds, 'j_sauce_end') then
-                      SMODS.calculate_effect({func = function()
+                if SMODS.pseudorandom_probability(card, 'group_0_ee8c8c09', 1, card.ability.extra.odds, 'j_sauce_end', false) then
+              SMODS.calculate_effect({func = function()
                 local destructable_jokers = {}
                 for i, joker in ipairs(G.jokers.cards) do
                     if joker ~= card and not joker.getting_sliced then
@@ -102,7 +106,7 @@ SMODS.Joker{ --END
                 return true
             end}, card)
                         card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Destroyed!", colour = G.C.RED})
-                  end
+          end
             end
         end
     end

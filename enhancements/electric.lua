@@ -1,6 +1,6 @@
 SMODS.Enhancement {
     key = 'electric',
-    pos = { x = 2, y = 0 },
+    pos = { x = 3, y = 0 },
     config = {
         extra = {
             x_chips = 1.3,
@@ -23,6 +23,7 @@ SMODS.Enhancement {
     unlocked = true,
     discovered = true,
     no_collection = false,
+    weight = 5,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
             return { x_chips = card.ability.extra.x_chips }

@@ -1,18 +1,86 @@
 SMODS.Booster {
+    key = 'cursed_pack',
+    loc_txt = {
+        name = "Cursed Pack",
+        text = {
+            "Pick 1 of 5 Cursed Jokers",
+            "(why would you ever want this?)"
+        },
+        group_name = "Cursed Pack"
+    },
+    config = { extra = 5, choose = 1 },
+    cost = 2,
+    atlas = "CustomBoosters",
+    pos = { x = 0, y = 0 },
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = { cfg.choose, cfg.extra }
+        }
+    end,
+    create_card = function(self, card, i)
+        return {
+        set = "Joker",
+        rarity = "sauce_cursed",
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "sauce_cursed_pack"
+        }
+    end,
+    particles = function(self)
+        -- No particles for joker packs
+    end,
+}
+
+
+SMODS.Booster {
+    key = 'gun_pack',
+    loc_txt = {
+        name = "Gun Pack",
+        text = {
+            "Choose 1 of 4 Gun Jokers."
+        },
+        group_name = "Gun Pack"
+    },
+    config = { extra = 3, choose = 1 },
+    atlas = "CustomBoosters",
+    pos = { x = 1, y = 0 },
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = { cfg.choose, cfg.extra }
+        }
+    end,
+    create_card = function(self, card, i)
+        return {
+        set = "sauce_gun",
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "sauce_gun_pack"
+        }
+    end,
+    particles = function(self)
+        -- No particles for joker packs
+    end,
+}
+
+
+SMODS.Booster {
     key = 'red_ring',
     loc_txt = {
         name = "Red Ring",
         text = {
-            "Gives 3 random \"EXE\" Jokers to choose from."
+            "Gives 3 random \"EXE\" Jokers to choose from"
         },
         group_name = "Red Ring"
     },
     config = { extra = 3, choose = 1 },
-    cost = 6,
+    cost = 8,
     weight = 0.5,
     atlas = "CustomBoosters",
-    pos = { x = 0, y = 0 },
-    discovered = true,
+    pos = { x = 2, y = 0 },
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {
@@ -111,6 +179,40 @@ SMODS.Booster {
     ease_background_colour = function(self)
         ease_colour(G.C.DYN_UI.MAIN, HEX("470a0a"))
         ease_background_colour({ new_colour = HEX('470a0a'), special_colour = HEX("fa0000"), contrast = 2 })
+    end,
+    particles = function(self)
+        -- No particles for joker packs
+    end,
+}
+
+
+SMODS.Booster {
+    key = 'shedletsky_pack',
+    loc_txt = {
+        name = "Shedletsky Pack",
+        text = {
+            "Choose 1 of 3 Shedletsky Jokers"
+        },
+        group_name = "Shedletsky Pack"
+    },
+    config = { extra = 3, choose = 1 },
+    cost = 6,
+    atlas = "CustomBoosters",
+    pos = { x = 3, y = 0 },
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = { cfg.choose, cfg.extra }
+        }
+    end,
+    create_card = function(self, card, i)
+        return {
+        set = "sauce_shed",
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "sauce_shedletsky_pack"
+        }
     end,
     particles = function(self)
         -- No particles for joker packs

@@ -21,8 +21,12 @@ SMODS.Joker{ --Father
         }
     },
     pos = {
-        x = 8,
-        y = 3
+        x = 1,
+        y = 5
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 35,
     rarity = "sauce_unnatural",
@@ -30,11 +34,11 @@ SMODS.Joker{ --Father
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 9,
-        y = 3
+        x = 2,
+        y = 5
     },
 
     calculate = function(self, card, context)

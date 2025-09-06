@@ -19,8 +19,12 @@ SMODS.Joker{ --Killer Kyle
         }
     },
     pos = {
-        x = 0,
-        y = 5
+        x = 3,
+        y = 7
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 6,
     rarity = 2,
@@ -28,7 +32,7 @@ SMODS.Joker{ --Killer Kyle
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)

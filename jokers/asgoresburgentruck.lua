@@ -3,6 +3,7 @@ SMODS.Joker{ --Asgores Burgentruck
     config = {
         extra = {
             joker_slots = 1,
+            ignore = 0,
             var1 = 0
         }
     },
@@ -10,7 +11,7 @@ SMODS.Joker{ --Asgores Burgentruck
         ['name'] = 'Asgores Burgentruck',
         ['text'] = {
             [1] = 'Adds a Joker slot when bought',
-            [2] = 'When cards are discarded, adds a {C:dark_edition}Negative{} {C:spectral}Perishable{} Dess to your Jokers',
+            [2] = 'When cards are discarded, adds a Dess to your Jokers',
             [3] = 'Destroys 2 Desses in your Jokers when hand is done scoring',
             [4] = '',
             [5] = '{C:inactive}\"Driving in my car right after a beer!\"{}',
@@ -22,8 +23,12 @@ SMODS.Joker{ --Asgores Burgentruck
         }
     },
     pos = {
-        x = 6,
+        x = 7,
         y = 0
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 10,
     rarity = 3,
@@ -31,7 +36,7 @@ SMODS.Joker{ --Asgores Burgentruck
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
@@ -52,7 +57,7 @@ SMODS.Joker{ --Asgores Burgentruck
                 func = function()
                     local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_dess' })
                     if joker_card then
-                        joker_card:set_edition("e_negative", true)
+                        
                         
                     end
                     

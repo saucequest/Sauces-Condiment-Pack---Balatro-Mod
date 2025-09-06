@@ -20,8 +20,12 @@ SMODS.Joker{ --Kitchen Wizard
         }
     },
     pos = {
-        x = 1,
-        y = 5
+        x = 4,
+        y = 7
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 5,
     rarity = 2,
@@ -29,7 +33,7 @@ SMODS.Joker{ --Kitchen Wizard
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)

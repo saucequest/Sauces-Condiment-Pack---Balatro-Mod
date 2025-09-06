@@ -1,15 +1,15 @@
 SMODS.Enhancement {
     key = 'corrupted',
-    pos = { x = 0, y = 0 },
+    pos = { x = 1, y = 0 },
     config = {
         extra = {
-            x_mult = 1.2
+            x_mult = 2.5
         }
     },
     loc_txt = {
         name = 'Corrupted',
         text = {
-        [1] = 'Gives {X:red,C:white}X1.2{} Mult and then destroys itself.'
+        [1] = 'Gives {X:red,C:white}X2.5{} Mult when scored, then destroy self'
     }
     },
     atlas = 'CustomEnhancements',
@@ -22,6 +22,7 @@ SMODS.Enhancement {
     unlocked = true,
     discovered = true,
     no_collection = false,
+    weight = 5,
     calculate = function(self, card, context)
         if context.destroy_card and context.cardarea == G.play and context.destroy_card == card and card.should_destroy then
             return { remove = true }

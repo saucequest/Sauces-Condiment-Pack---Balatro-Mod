@@ -8,7 +8,7 @@ SMODS.Consumable {
         [1] = 'Make up to 3 selected cards {C:attention}Bonus{} Cards and {C:dark_edition}Negative{}'
     }
     },
-    cost = 3,
+    cost = 6,
     unlocked = true,
     discovered = true,
     hidden = false,

@@ -21,8 +21,12 @@ SMODS.Joker{ --Doombringer
         }
     },
     pos = {
-        x = 4,
-        y = 3
+        x = 6,
+        y = 4
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 7,
     rarity = 2,
@@ -30,7 +34,7 @@ SMODS.Joker{ --Doombringer
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     loc_vars = function(self, info_queue, card)

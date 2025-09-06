@@ -14,8 +14,12 @@ SMODS.Joker{ --Discord
         }
     },
     pos = {
-        x = 0,
+        x = 9,
         y = 3
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 9,
     rarity = 2,
@@ -23,7 +27,7 @@ SMODS.Joker{ --Discord
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)

@@ -22,20 +22,28 @@ SMODS.Consumable {
     atlas = 'CustomConsumables',
     use = function(self, card, area, copier)
         local used_card = copier or card
-            if SMODS.pseudorandom_probability(card, 'group_0_4d01f0ee', 1, card.ability.extra.odds, 'c_sauce') then
+            if SMODS.pseudorandom_probability(card, 'group_0_4d01f0ee', 1, card.ability.extra.odds, 'c_sauce_jobapplication', false) then
+                
                 G.E_MANAGER:add_event(Event({
                   trigger = 'after',
                   delay = 0.4,
                   func = function()
                       play_sound('timpani')
-                      SMODS.add_card({ set = 'Joker', key = 'j_credit_card' })
+                      if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
+                          G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+                      local new_joker = SMODS.add_card({ set = 'Joker', key = 'j_credit_card' })
+                      if new_joker then
+                      end
+                          G.GAME.joker_buffer = 0
+                      end
                       used_card:juice_up(0.3, 0.5)
                       return true
                   end
               }))
               delay(0.6)
             end
-            if SMODS.pseudorandom_probability(card, 'group_1_6b17b932', 1, card.ability.extra.odds2, 'c_sauce') then
+            if SMODS.pseudorandom_probability(card, 'group_1_6b17b932', 1, card.ability.extra.odds2, 'c_sauce_jobapplication', false) then
+                
                 G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,

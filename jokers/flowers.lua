@@ -27,8 +27,12 @@ SMODS.Joker{ --Flowers
         }
     },
     pos = {
-        x = 1,
-        y = 4
+        x = 5,
+        y = 5
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 0,
     rarity = "sauce_unnatural",
@@ -36,7 +40,7 @@ SMODS.Joker{ --Flowers
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     in_pool = function(self, args)
           return (
@@ -77,7 +81,7 @@ SMODS.Joker{ --Flowers
     end
 }))
         SMODS.change_free_rerolls(card.ability.extra.reroll_amount)
-        G.GAME.bankrupt_at = G.GAME.bankrupt_at - (card.ability.extra.debt_amount)
+        G.GAME.bankrupt_at = G.GAME.bankrupt_at - card.ability.extra.debt_amount
     end,
 
     remove_from_deck = function(self, card, from_debuff)
@@ -90,7 +94,7 @@ SMODS.Joker{ --Flowers
     end
 }))
         SMODS.change_free_rerolls(-(card.ability.extra.reroll_amount))
-        G.GAME.bankrupt_at = G.GAME.bankrupt_at + (card.ability.extra.debt_amount)
+        G.GAME.bankrupt_at = G.GAME.bankrupt_at + card.ability.extra.debt_amount
     end
 }
 

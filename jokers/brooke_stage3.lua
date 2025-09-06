@@ -18,8 +18,12 @@ SMODS.Joker{ --Brooke
         }
     },
     pos = {
-        x = 1,
+        x = 6,
         y = 1
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 1,
     rarity = 1,
@@ -27,10 +31,10 @@ SMODS.Joker{ --Brooke
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 2,
+        x = 7,
         y = 1
     },
     in_pool = function(self, args)

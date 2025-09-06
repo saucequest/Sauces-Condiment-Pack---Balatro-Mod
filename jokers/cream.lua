@@ -3,14 +3,14 @@ SMODS.Joker{ --Cream
     config = {
         extra = {
             foodjokers = 0,
-            respect = 0
+            ignore = 0
         }
     },
     loc_txt = {
         ['name'] = 'Cream',
         ['text'] = {
             [1] = 'Creates a {C:purple}consumable {}when Blind selected',
-            [2] = 'Creates a {C:dark_edition}Food Joker{} when Boss Blind destroyed',
+            [2] = 'Creates a {C:dark_edition}Food Joker{} when Boss Blind defeated',
             [3] = '{C:inactive}\"I\'m gonna put on the biggest smile I can and share it with everyone!\"{}',
             [4] = '{C:inactive}Originates from{} {C:spectral}Sonic the Hedgehog{}'
         },
@@ -19,8 +19,12 @@ SMODS.Joker{ --Cream
         }
     },
     pos = {
-        x = 4,
-        y = 2
+        x = 1,
+        y = 3
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 7,
     rarity = 2,
@@ -28,11 +32,11 @@ SMODS.Joker{ --Cream
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 5,
-        y = 2
+        x = 2,
+        y = 3
     },
 
     calculate = function(self, card, context)
@@ -59,7 +63,7 @@ SMODS.Joker{ --Cream
                 end,
                     extra = {
                         func = function()
-                    card.ability.extra.foodjokers = pseudorandom('foodjokers_5bb55131', 1, 8)
+                    card.ability.extra.foodjokers = pseudorandom('foodjokers_18cbbcd6', 1, 8)
                     return true
                 end,
                         colour = G.C.BLUE
@@ -70,22 +74,19 @@ SMODS.Joker{ --Cream
             if (card.ability.extra.foodjokers or 0) == 1 then
                 return {
                     func = function()
-            local created_joker = false
-    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-        created_joker = true
-        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_ramen' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_gros_michel' })
                     if joker_card then
                         
                         
                     end
-                    G.GAME.joker_buffer = 0
+                    
                     return true
                 end
             }))
-            end
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
@@ -95,22 +96,19 @@ SMODS.Joker{ --Cream
             elseif (card.ability.extra.foodjokers or 0) == 2 then
                 return {
                     func = function()
-            local created_joker = false
-    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-        created_joker = true
-        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_cavendish' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_egg' })
                     if joker_card then
                         
                         
                     end
-                    G.GAME.joker_buffer = 0
+                    
                     return true
                 end
             }))
-            end
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
@@ -120,22 +118,19 @@ SMODS.Joker{ --Cream
             elseif (card.ability.extra.foodjokers or 0) == 3 then
                 return {
                     func = function()
-            local created_joker = false
-    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-        created_joker = true
-        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_popcorn' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_ice_cream' })
                     if joker_card then
                         
                         
                     end
-                    G.GAME.joker_buffer = 0
+                    
                     return true
                 end
             }))
-            end
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
@@ -145,22 +140,19 @@ SMODS.Joker{ --Cream
             elseif (card.ability.extra.foodjokers or 0) == 4 then
                 return {
                     func = function()
-            local created_joker = false
-    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-        created_joker = true
-        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_ice_cream' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_diet_cola' })
                     if joker_card then
                         
                         
                     end
-                    G.GAME.joker_buffer = 0
+                    
                     return true
                 end
             }))
-            end
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
@@ -170,22 +162,19 @@ SMODS.Joker{ --Cream
             elseif (card.ability.extra.foodjokers or 0) == 5 then
                 return {
                     func = function()
-            local created_joker = false
-    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-        created_joker = true
-        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_egg' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_popcorn' })
                     if joker_card then
                         
                         
                     end
-                    G.GAME.joker_buffer = 0
+                    
                     return true
                 end
             }))
-            end
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
@@ -195,22 +184,19 @@ SMODS.Joker{ --Cream
             elseif (card.ability.extra.foodjokers or 0) == 6 then
                 return {
                     func = function()
-            local created_joker = false
-    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-        created_joker = true
-        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_bean' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_ramen' })
                     if joker_card then
                         
                         
                     end
-                    G.GAME.joker_buffer = 0
+                    
                     return true
                 end
             }))
-            end
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
@@ -220,22 +206,19 @@ SMODS.Joker{ --Cream
             elseif (card.ability.extra.foodjokers or 0) == 7 then
                 return {
                     func = function()
-            local created_joker = false
-    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-        created_joker = true
-        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_cola' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_selzer' })
                     if joker_card then
                         
                         
                     end
-                    G.GAME.joker_buffer = 0
+                    
                     return true
                 end
             }))
-            end
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
@@ -245,22 +228,19 @@ SMODS.Joker{ --Cream
             elseif (card.ability.extra.foodjokers or 0) == 8 then
                 return {
                     func = function()
-            local created_joker = false
-    if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-        created_joker = true
-        G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+            local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_gros_michel' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_cavendish' })
                     if joker_card then
                         
                         
                     end
-                    G.GAME.joker_buffer = 0
+                    
                     return true
                 end
             }))
-            end
+            
             if created_joker then
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end

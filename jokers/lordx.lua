@@ -18,8 +18,12 @@ SMODS.Joker{ --Lord X
         }
     },
     pos = {
-        x = 3,
-        y = 5
+        x = 8,
+        y = 7
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 7,
     rarity = 2,
@@ -27,11 +31,11 @@ SMODS.Joker{ --Lord X
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 4,
-        y = 5
+        x = 9,
+        y = 7
     },
 
     loc_vars = function(self, info_queue, card)

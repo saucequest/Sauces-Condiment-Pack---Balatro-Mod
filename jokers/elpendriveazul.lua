@@ -4,7 +4,8 @@ SMODS.Joker{ --El Pendrive Azul
         extra = {
             pendrivecountdown = 2,
             countdownforrealthistime = 5,
-            var1 = 0
+            var1 = 0,
+            no = 0
         }
     },
     loc_txt = {
@@ -20,8 +21,12 @@ SMODS.Joker{ --El Pendrive Azul
         }
     },
     pos = {
-        x = 5,
-        y = 3
+        x = 8,
+        y = 4
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 7,
     rarity = 2,
@@ -29,11 +34,11 @@ SMODS.Joker{ --El Pendrive Azul
     eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 6,
-        y = 3
+        x = 9,
+        y = 4
     },
 
     loc_vars = function(self, info_queue, card)

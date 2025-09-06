@@ -22,7 +22,11 @@ SMODS.Joker{ --Doctor Robotnik
     },
     pos = {
         x = 1,
-        y = 3
+        y = 4
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 2,
@@ -30,11 +34,11 @@ SMODS.Joker{ --Doctor Robotnik
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
         x = 2,
-        y = 3
+        y = 4
     },
 
     calculate = function(self, card, context)
@@ -63,8 +67,8 @@ SMODS.Joker{ --Doctor Robotnik
         end
         if context.end_of_round and context.main_eval and G.GAME.blind.boss  then
             if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_fd3eb8f2', 1, card.ability.extra.odds, 'j_sauce_doctorrobotnik') then
-                      SMODS.calculate_effect({func = function()
+                if SMODS.pseudorandom_probability(card, 'group_0_fd3eb8f2', 1, card.ability.extra.odds, 'j_sauce_doctorrobotnik', false) then
+              SMODS.calculate_effect({func = function()
             local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
@@ -83,7 +87,7 @@ SMODS.Joker{ --Doctor Robotnik
             end
             return true
         end}, card)
-                  end
+          end
             end
         end
         if context.individual and context.cardarea == G.play  then

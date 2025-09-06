@@ -21,8 +21,12 @@ SMODS.Joker{ --Guest 666
         }
     },
     pos = {
-        x = 4,
-        y = 4
+        x = 9,
+        y = 5
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 6,
     rarity = 2,
@@ -30,7 +34,7 @@ SMODS.Joker{ --Guest 666
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     loc_vars = function(self, info_queue, card)
@@ -50,6 +54,14 @@ SMODS.Joker{ --Guest 666
             end
         end
         if context.remove_playing_cards  then
+                return {
+                    func = function()
+                    card.ability.extra.guesttransform = (card.ability.extra.guesttransform) + 6
+                    return true
+                end
+                }
+        end
+        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
                 return {
                     func = function()
                     card.ability.extra.guesttransform = (card.ability.extra.guesttransform) + 6

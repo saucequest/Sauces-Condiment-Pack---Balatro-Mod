@@ -9,7 +9,7 @@ SMODS.Joker{ --John Doe
         ['name'] = 'John Doe',
         ['text'] = {
             [1] = 'Applies {C:red}Corrupted {}to the last scoring card.',
-            [2] = 'Played Aces and 8s give {C:blue}+30{} Chips',
+            [2] = 'Played Aces and 8s give {C:blue}+80{} Chips',
             [3] = '{C:inactive}\"DON\'T PLAY ROBLOX ON MARCH 18TH?!?!\"{}',
             [4] = '{C:inactive}Originates from{} {C:red}FORSAKEN{}'
         },
@@ -18,8 +18,12 @@ SMODS.Joker{ --John Doe
         }
     },
     pos = {
-        x = 8,
-        y = 4
+        x = 7,
+        y = 6
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 2,
@@ -27,7 +31,7 @@ SMODS.Joker{ --John Doe
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)

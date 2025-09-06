@@ -9,15 +9,20 @@ SMODS.Joker{ --AK47
     loc_txt = {
         ['name'] = 'AK47',
         ['text'] = {
-            [1] = '{X:red,C:white}X1.3{} Mult for 4 rounds'
+            [1] = '{X:red,C:white}X1.3{} Mult for 4 rounds',
+            [2] = '{C:dark_edition}Gun Joker{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 4,
+        x = 5,
         y = 0
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 5,
     rarity = 2,
@@ -25,8 +30,9 @@ SMODS.Joker{ --AK47
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
+    pools = { ["sauce_gun"] = true },
 
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then

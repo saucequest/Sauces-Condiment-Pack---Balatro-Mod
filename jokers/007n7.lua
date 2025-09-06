@@ -3,7 +3,6 @@ SMODS.Joker{ --007n7
     config = {
         extra = {
             clonecooldown = 0,
-            Tarot = 0,
             perishable = 0,
             respect = 0
         }
@@ -24,18 +23,22 @@ SMODS.Joker{ --007n7
         x = 0,
         y = 0
     },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
     cost = 5,
     rarity = 1,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
         if context.setting_blind  then
-            if (card.ability.extra.clonecooldown or 0) == 2 then
+            if (card.ability.extra.clonecooldown or 0) == 3 then
                 return {
                     func = function()
             local created_joker = false
@@ -58,7 +61,14 @@ SMODS.Joker{ --007n7
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
             return true
-        end
+        end,
+                    extra = {
+                        func = function()
+                    card.ability.extra.clonecooldown = 0
+                    return true
+                end,
+                        colour = G.C.BLUE
+                        }
                 }
             else
                 return {
