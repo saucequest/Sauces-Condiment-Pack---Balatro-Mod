@@ -20,7 +20,11 @@ SMODS.Joker{ --Surge the Tenrec
     },
     pos = {
         x = 2,
-        y = 9
+        y = 12
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 3,
@@ -28,11 +32,11 @@ SMODS.Joker{ --Surge the Tenrec
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
         x = 3,
-        y = 9
+        y = 12
     },
 
     calculate = function(self, card, context)

@@ -17,8 +17,12 @@ SMODS.Joker{ --Pace and The Shadow
         }
     },
     pos = {
-        x = 7,
-        y = 6
+        x = 5,
+        y = 9
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 2,
@@ -26,7 +30,7 @@ SMODS.Joker{ --Pace and The Shadow
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)

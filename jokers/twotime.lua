@@ -18,8 +18,12 @@ SMODS.Joker{ --Two Time
         }
     },
     pos = {
-        x = 5,
-        y = 9
+        x = 7,
+        y = 12
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 7,
     rarity = 2,
@@ -27,7 +31,7 @@ SMODS.Joker{ --Two Time
     eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)

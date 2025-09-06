@@ -1,44 +1,42 @@
-SMODS.Joker{ --Rocket Launcher
-    key = "rocketlauncher",
+SMODS.Joker{ --Workclock Chance
+    key = "workclockchance",
     config = {
         extra = {
-            missilesleft = 1,
-            Xmult = 2.5
+            currentweekday = 0,
+            Xmult = 2
         }
     },
     loc_txt = {
-        ['name'] = 'Rocket Launcher',
+        ['name'] = 'Workclock Chance',
         ['text'] = {
-            [1] = '{X:mult,C:white}X2.5{} Mult on next hand',
-            [2] = 'Does not give Mult at all for the run after the round',
-            [3] = '{C:dark_edition}Gun Joker{}'
+            [1] = 'If day playing is on a weekend, {C:green}1 in 2{} chance for {X:mult,C:white}X2{} Mult',
+            [2] = '{C:inactive}\"Snazzy!\"{}',
+            [3] = '{C:inactive}Originates from{} {C:red}FORSAKEN{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 8,
-        y = 10
+        x = 4,
+        y = 13
     },
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 8,
-    rarity = 3,
+    cost = 6,
+    rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
     discovered = false,
     atlas = 'CustomJokers',
-    pools = { ["sauce_gun"] = true },
 
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
-            if (card.ability.extra.missilesleft or 0) == 1 then
-                card.ability.extra.missilesleft = 0
+            if (7 == os.date("*t", os.time()).wday or 1 == os.date("*t", os.time()).wday) then
                 return {
                     Xmult = card.ability.extra.Xmult
                 }

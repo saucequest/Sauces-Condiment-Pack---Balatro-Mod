@@ -3,7 +3,7 @@ SMODS.Joker{ --U
     config = {
         extra = {
             retriggers = 1,
-            yes = 0,
+            no = 0,
             var1 = 0
         }
     },
@@ -20,8 +20,12 @@ SMODS.Joker{ --U
         }
     },
     pos = {
-        x = 6,
-        y = 9
+        x = 8,
+        y = 12
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 2,
@@ -29,7 +33,7 @@ SMODS.Joker{ --U
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
@@ -39,16 +43,13 @@ SMODS.Joker{ --U
                 local target_joker = nil
                 for i = #G.jokers.cards, 1, -1 do
                     local joker = G.jokers.cards[i]
-                    if joker ~= card and not joker.getting_sliced then
+                    if joker ~= card and not joker.ability.eternal and not joker.getting_sliced then
                         target_joker = joker
                         break
                     end
                 end
                 
                 if target_joker then
-                    if target_joker.ability.eternal then
-                        target_joker.ability.eternal = nil
-                    end
                     target_joker.getting_sliced = true
                     G.E_MANAGER:add_event(Event({
                         func = function()

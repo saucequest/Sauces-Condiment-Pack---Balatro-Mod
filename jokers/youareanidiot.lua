@@ -23,8 +23,12 @@ SMODS.Joker{ --You Are An Idiot!
         }
     },
     pos = {
-        x = 1,
-        y = 10
+        x = 5,
+        y = 13
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 3,
@@ -32,11 +36,11 @@ SMODS.Joker{ --You Are An Idiot!
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 2,
-        y = 10
+        x = 6,
+        y = 13
     },
 
     loc_vars = function(self, info_queue, card)
@@ -57,7 +61,7 @@ SMODS.Joker{ --You Are An Idiot!
         if context.cardarea == G.jokers and context.joker_main  then
             if context.scoring_name == "High Card" then
                 card.ability.extra.idiot = (card.ability.extra.idiot) + 0.3
-            elseif context.scoring_name ~= "High Card" then
+            elseif context.scoring_name == "High Card" then
                 card.ability.extra.idiot = math.max(0, (card.ability.extra.idiot) - 0.2)
             else
                 return {

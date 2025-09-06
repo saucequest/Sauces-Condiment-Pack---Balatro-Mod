@@ -18,8 +18,12 @@ SMODS.Joker{ --White Pumpkin
         }
     },
     pos = {
-        x = 0,
-        y = 10
+        x = 3,
+        y = 13
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 7,
     rarity = 3,
@@ -27,7 +31,7 @@ SMODS.Joker{ --White Pumpkin
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)

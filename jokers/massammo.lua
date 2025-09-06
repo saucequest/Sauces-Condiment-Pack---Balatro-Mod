@@ -1,33 +1,29 @@
-SMODS.Joker{ --Shadow the Hedgehog
-    key = "shadowthehedgehog",
+SMODS.Joker{ --This is... MASS AMMUNITION!
+    key = "massammo",
     config = {
         extra = {
-            gunjokerpool = 0,
             respect = 0,
-            gun = 0
+            shed = 0
         }
     },
     loc_txt = {
-        ['name'] = 'Shadow the Hedgehog',
+        ['name'] = 'This is... MASS AMMUNITION!',
         ['text'] = {
-            [1] = 'Gives a Chaos Emerald when bought {C:inactive}(Requires room){}',
-            [2] = 'Gives a random Gun Joker when Boss Blind defeated{C:inactive} (Requires room){}',
-            [3] = '{C:inactive}\"Where\'s that DAMN fourth Chaos Emerald?\"{}',
-            [4] = '{C:inactive}Originates from{} {C:common}Sonic the Hedgehog{}'
+            [1] = 'When sold, gives a Flintlock and a Shedletsky Joker'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 1,
-        y = 11
+        x = 6,
+        y = 12
     },
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 8,
+    cost = 6,
     rarity = 3,
     blueprint_compat = true,
     eternal_compat = true,
@@ -35,13 +31,10 @@ SMODS.Joker{ --Shadow the Hedgehog
     unlocked = true,
     discovered = false,
     atlas = 'CustomJokers',
-    soul_pos = {
-        x = 2,
-        y = 11
-    },
+    pools = { ["sauce_shed"] = true },
 
     calculate = function(self, card, context)
-        if context.buying_card and context.card.config.center.key == self.key and context.cardarea == G.jokers  then
+        if context.selling_self  then
                 return {
                     func = function()
             local created_joker = false
@@ -50,7 +43,7 @@ SMODS.Joker{ --Shadow the Hedgehog
         G.GAME.joker_buffer = G.GAME.joker_buffer + 1
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_chaosemerald' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sauce_flintlock' })
                     if joker_card then
                         
                         
@@ -64,19 +57,16 @@ SMODS.Joker{ --Shadow the Hedgehog
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
             return true
-        end
-                }
-        end
-        if context.end_of_round and context.main_eval and G.GAME.blind.boss  then
-                return {
-                    func = function()
+        end,
+                    extra = {
+                        func = function()
             local created_joker = false
     if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
         created_joker = true
         G.GAME.joker_buffer = G.GAME.joker_buffer + 1
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'sauce_gun' })
+                    local joker_card = SMODS.add_card({ set = 'sauce_shed' })
                     if joker_card then
                         
                         
@@ -90,7 +80,9 @@ SMODS.Joker{ --Shadow the Hedgehog
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
             end
             return true
-        end
+        end,
+                        colour = G.C.BLUE
+                        }
                 }
         end
     end

@@ -30,8 +30,12 @@ SMODS.Joker{ --Metal Sonic
         }
     },
     pos = {
-        x = 7,
-        y = 5
+        x = 3,
+        y = 8
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 7,
     rarity = 3,
@@ -39,11 +43,11 @@ SMODS.Joker{ --Metal Sonic
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 8,
-        y = 5
+        x = 4,
+        y = 8
     },
 
     loc_vars = function(self, info_queue, card)

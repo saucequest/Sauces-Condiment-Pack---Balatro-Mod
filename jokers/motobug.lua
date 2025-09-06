@@ -15,8 +15,12 @@ SMODS.Joker{ --Moto Bug
         }
     },
     pos = {
-        x = 0,
-        y = 6
+        x = 7,
+        y = 8
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 5,
     rarity = 1,
@@ -24,11 +28,11 @@ SMODS.Joker{ --Moto Bug
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 1,
-        y = 6
+        x = 8,
+        y = 8
     },
 
     calculate = function(self, card, context)

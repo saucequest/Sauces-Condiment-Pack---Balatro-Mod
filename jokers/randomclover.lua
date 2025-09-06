@@ -26,8 +26,12 @@ SMODS.Joker{ --RandomClover
         }
     },
     pos = {
-        x = 2,
-        y = 7
+        x = 0,
+        y = 10
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 2,
@@ -35,21 +39,21 @@ SMODS.Joker{ --RandomClover
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
             if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_09e2f477', 1, card.ability.extra.odds, 'j_sauce_randomclover') then
-                      SMODS.calculate_effect({mult = card.ability.extra.mult}, card)
-                  end
-                if SMODS.pseudorandom_probability(card, 'group_1_7d575c29', 1, card.ability.extra.odds2, 'j_sauce_randomclover') then
-                      SMODS.calculate_effect({Xmult = card.ability.extra.Xmult}, card)
-                  end
-                if SMODS.pseudorandom_probability(card, 'group_2_a692e19a', 1, card.ability.extra.odds3, 'j_sauce_randomclover') then
-                      SMODS.calculate_effect({e_mult = card.ability.extra.emult}, card)
-                  end
+                if SMODS.pseudorandom_probability(card, 'group_0_09e2f477', 1, card.ability.extra.odds, 'j_sauce_randomclover', false) then
+              SMODS.calculate_effect({mult = card.ability.extra.mult}, card)
+          end
+                if SMODS.pseudorandom_probability(card, 'group_1_7d575c29', 1, card.ability.extra.odds2, 'j_sauce_randomclover', false) then
+              SMODS.calculate_effect({Xmult = card.ability.extra.Xmult}, card)
+          end
+                if SMODS.pseudorandom_probability(card, 'group_2_a692e19a', 1, card.ability.extra.odds3, 'j_sauce_randomclover', false) then
+              SMODS.calculate_effect({e_mult = card.ability.extra.emult}, card)
+          end
             end
         end
     end

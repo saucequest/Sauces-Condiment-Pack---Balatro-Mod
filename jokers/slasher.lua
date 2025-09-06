@@ -18,7 +18,11 @@ SMODS.Joker{ --Slasher
     },
     pos = {
         x = 6,
-        y = 8
+        y = 11
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 6,
     rarity = 2,
@@ -26,7 +30,7 @@ SMODS.Joker{ --Slasher
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)

@@ -21,16 +21,20 @@ SMODS.Joker{ --Ultimate Chimera
         }
     },
     pos = {
-        x = 7,
-        y = 9
+        x = 9,
+        y = 12
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 99,
-    rarity = "sauce_unnatural",
+    rarity = "sauce_cursed",
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     in_pool = function(self, args)
           return (

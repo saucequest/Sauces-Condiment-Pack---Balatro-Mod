@@ -25,7 +25,11 @@ SMODS.Joker{ --Stocks
     },
     pos = {
         x = 1,
-        y = 9
+        y = 12
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 5,
     rarity = 1,
@@ -33,7 +37,7 @@ SMODS.Joker{ --Stocks
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     loc_vars = function(self, info_queue, card)
@@ -44,14 +48,14 @@ SMODS.Joker{ --Stocks
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
             if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_fb99f833', 1, card.ability.extra.odds, 'j_sauce_stocks') then
-                      local moneygain_value = card.ability.extra.moneygain
+                if SMODS.pseudorandom_probability(card, 'group_0_fb99f833', 1, card.ability.extra.odds, 'j_sauce_stocks', false) then
+              local moneygain_value = card.ability.extra.moneygain
                         card.ability.extra.moneygain = (card.ability.extra.moneygain) + 1
                         card.ability.extra_value = (card.ability.extra_value or 0) + card.ability.extra.sell_value
             card:set_cost()
                         SMODS.calculate_effect({dollars = moneygain_value}, card)
                         card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "+"..tostring(card.ability.extra.sell_value).." Sell Value", colour = G.C.MONEY})
-                  end
+          end
             end
         end
         if context.pseudorandom_result  then

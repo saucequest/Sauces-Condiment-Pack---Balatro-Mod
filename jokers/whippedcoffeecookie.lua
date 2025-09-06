@@ -19,8 +19,12 @@ SMODS.Joker{ --Whipped Coffee Cookie
         }
     },
     pos = {
-        x = 8,
-        y = 9
+        x = 1,
+        y = 13
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 9,
     rarity = 3,
@@ -28,11 +32,11 @@ SMODS.Joker{ --Whipped Coffee Cookie
     eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 9,
-        y = 9
+        x = 2,
+        y = 13
     },
 
     calculate = function(self, card, context)

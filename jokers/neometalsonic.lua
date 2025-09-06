@@ -23,8 +23,12 @@ SMODS.Joker{ --Neo Metal Sonic
         }
     },
     pos = {
-        x = 2,
-        y = 6
+        x = 0,
+        y = 9
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 0,
     rarity = 4,
@@ -32,11 +36,11 @@ SMODS.Joker{ --Neo Metal Sonic
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 3,
-        y = 6
+        x = 1,
+        y = 9
     },
     in_pool = function(self, args)
           return (

@@ -1,48 +1,43 @@
-SMODS.Joker{ --Rocket Launcher
-    key = "rocketlauncher",
+SMODS.Joker{ --mr naneinf
+    key = "mrnaneinf",
     config = {
         extra = {
-            missilesleft = 1,
-            Xmult = 2.5
+            Xmult = 0
         }
     },
     loc_txt = {
-        ['name'] = 'Rocket Launcher',
+        ['name'] = 'mr naneinf',
         ['text'] = {
-            [1] = '{X:mult,C:white}X2.5{} Mult on next hand',
-            [2] = 'Does not give Mult at all for the run after the round',
-            [3] = '{C:dark_edition}Gun Joker{}'
+            [1] = 'Sets you to Ante 39',
+            [2] = '{C:inactive,s:0.7}(Get it? Because that\'s where the Blind Requirements{}',
+            [3] = '{C:inactive,s:0.7}overflow to naneinf? Nevermind.){}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 8,
-        y = 10
+        x = 9,
+        y = 8
     },
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 8,
-    rarity = 3,
+    cost = 0,
+    rarity = "sauce_cursed",
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
     discovered = false,
     atlas = 'CustomJokers',
-    pools = { ["sauce_gun"] = true },
 
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
-            if (card.ability.extra.missilesleft or 0) == 1 then
-                card.ability.extra.missilesleft = 0
                 return {
                     Xmult = card.ability.extra.Xmult
                 }
-            end
         end
     end
 }

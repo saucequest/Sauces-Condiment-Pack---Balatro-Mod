@@ -15,8 +15,12 @@ SMODS.Joker{ --Rice
         }
     },
     pos = {
-        x = 6,
-        y = 7
+        x = 5,
+        y = 10
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 3,
     rarity = 1,
@@ -24,11 +28,11 @@ SMODS.Joker{ --Rice
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 7,
-        y = 7
+        x = 6,
+        y = 10
     },
 
     calculate = function(self, card, context)

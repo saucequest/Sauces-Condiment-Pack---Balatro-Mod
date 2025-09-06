@@ -5,7 +5,8 @@ SMODS.Joker{ --The Great Floccinaucinihilipilification
             wisheffect = 0,
             dollars = 25,
             respect = 0,
-            var1 = 0
+            var1 = 0,
+            no = 0
         }
     },
     loc_txt = {
@@ -26,7 +27,11 @@ SMODS.Joker{ --The Great Floccinaucinihilipilification
     },
     pos = {
         x = 4,
-        y = 9
+        y = 12
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 3,
@@ -34,7 +39,7 @@ SMODS.Joker{ --The Great Floccinaucinihilipilification
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)

@@ -21,8 +21,12 @@ SMODS.Joker{ --Noli?
         }
     },
     pos = {
-        x = 6,
-        y = 6
+        x = 4,
+        y = 9
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 0,
     rarity = "sauce_hallucination",

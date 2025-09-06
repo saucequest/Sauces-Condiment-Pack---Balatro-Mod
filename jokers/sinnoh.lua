@@ -19,8 +19,12 @@ SMODS.Joker{ --Sinnoh
         }
     },
     pos = {
-        x = 4,
-        y = 8
+        x = 3,
+        y = 11
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 87,
     rarity = "sauce_unnatural",
@@ -28,11 +32,11 @@ SMODS.Joker{ --Sinnoh
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 5,
-        y = 8
+        x = 4,
+        y = 11
     },
     in_pool = function(self, args)
           return (

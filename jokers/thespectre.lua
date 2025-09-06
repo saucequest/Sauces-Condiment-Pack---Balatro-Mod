@@ -1,29 +1,33 @@
-SMODS.Joker{ --Paper Shredder
-    key = "papershredder",
+SMODS.Joker{ --The Spectre
+    key = "thespectre",
     config = {
         extra = {
+            yes = 0,
             var1 = 0
         }
     },
     loc_txt = {
-        ['name'] = 'Paper Shredder',
+        ['name'] = 'The Spectre',
         ['text'] = {
-            [1] = '{C:red}Destroys{} a random Joker when Blind selected.'
+            [1] = 'Destroys the Joker to the right of it',
+            [2] = 'when Shop entered (bypasses {C:tarot}Eternals{})',
+            [3] = '{C:inactive}\"you wouldn\'t dare defy me.\"{}',
+            [4] = '{C:inactive}Originates from{} {C:red}FORSAKEN{}'
         },
         ['unlock'] = {
-            [1] = ''
+            [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 6,
-        y = 9
+        x = 5,
+        y = 12
     },
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 1,
-    rarity = 1,
+    cost = 8,
+    rarity = 3,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -32,18 +36,28 @@ SMODS.Joker{ --Paper Shredder
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.setting_blind  then
+        if context.starting_shop  then
                 return {
                     func = function()
-                local destructable_jokers = {}
-                for i, joker in ipairs(G.jokers.cards) do
-                    if joker ~= card and not joker.ability.eternal and not joker.getting_sliced then
-                        table.insert(destructable_jokers, joker)
+                local my_pos = nil
+                for i = 1, #G.jokers.cards do
+                    if G.jokers.cards[i] == card then
+                        my_pos = i
+                        break
                     end
                 end
-                local target_joker = #destructable_jokers > 0 and pseudorandom_element(destructable_jokers, pseudoseed('destroy_joker')) or nil
+                local target_joker = nil
+                if my_pos and my_pos < #G.jokers.cards then
+                    local joker = G.jokers.cards[my_pos + 1]
+                    if true and not joker.getting_sliced then
+                        target_joker = joker
+                    end
+                end
                 
                 if target_joker then
+                    if target_joker.ability.eternal then
+                        target_joker.ability.eternal = nil
+                    end
                     target_joker.getting_sliced = true
                     G.E_MANAGER:add_event(Event({
                         func = function()

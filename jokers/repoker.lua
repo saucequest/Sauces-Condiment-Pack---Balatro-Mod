@@ -22,8 +22,12 @@ SMODS.Joker{ --REPOker
         }
     },
     pos = {
-        x = 3,
-        y = 7
+        x = 1,
+        y = 10
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 8,
     rarity = 2,
@@ -31,7 +35,7 @@ SMODS.Joker{ --REPOker
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
@@ -40,7 +44,7 @@ SMODS.Joker{ --REPOker
                 return {
                     dollars = card.ability.extra.dollars
                 }
-            elseif (context.other_card:get_id() == 6 or context.other_card:get_id() == 7 or context.other_card:get_id() == 8 or context.other_card:get_id() == 9) then
+            elseif (context.other_card:get_id() == 6 or context.other_card:get_id() == 7 or context.other_card:get_id() == 8 or context.other_card:get_id() == 9 and context.other_card:get_id() == 10) then
                 return {
                     dollars = card.ability.extra.dollars2
                 }

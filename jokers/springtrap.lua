@@ -22,7 +22,11 @@ SMODS.Joker{ --Springtrap
     },
     pos = {
         x = 9,
-        y = 8
+        y = 11
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 0,
     rarity = "sauce_cursed",
@@ -30,11 +34,11 @@ SMODS.Joker{ --Springtrap
     eternal_compat = true,
     perishable_compat = false,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
         x = 0,
-        y = 9
+        y = 12
     },
 
     set_ability = function(self, card, initial)

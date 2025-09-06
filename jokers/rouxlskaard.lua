@@ -2,7 +2,6 @@ SMODS.Joker{ --Rouxls Kaard
     key = "rouxlskaard",
     config = {
         extra = {
-            Tarot = 0
         }
     },
     loc_txt = {
@@ -19,8 +18,12 @@ SMODS.Joker{ --Rouxls Kaard
         }
     },
     pos = {
-        x = 0,
-        y = 8
+        x = 9,
+        y = 10
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 4,
     rarity = 1,
@@ -28,11 +31,11 @@ SMODS.Joker{ --Rouxls Kaard
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
-        x = 1,
-        y = 8
+        x = 0,
+        y = 11
     },
 
     calculate = function(self, card, context)

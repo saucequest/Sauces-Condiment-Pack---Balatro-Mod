@@ -8,24 +8,36 @@ SMODS.Joker{ --Pizza
     loc_txt = {
         ['name'] = 'Pizza',
         ['text'] = {
-            [1] = 'A pizza.'
+            [1] = 'Don\'t touch his damn pizza.'
         },
         ['unlock'] = {
             [1] = ''
         }
     },
     pos = {
-        x = 9,
-        y = 6
+        x = 7,
+        y = 9
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
     },
     cost = 1,
-    rarity = 1,
+    rarity = "sauce_cursed",
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
+    in_pool = function(self, args)
+          return (
+          not args 
+          or args.source ~= 'sho' and args.source ~= 'buf' and args.source ~= 'jud' and args.source ~= 'rif' 
+          or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+          )
+          and true
+      end,
 
     calculate = function(self, card, context)
         if context.selling_self  and not context.blueprint then
