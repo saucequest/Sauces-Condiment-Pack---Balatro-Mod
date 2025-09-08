@@ -2,7 +2,7 @@ SMODS.Joker{ --Code Corruption
     key = "codecorruption",
     config = {
         extra = {
-            odds = 40,
+            odds = 25,
             unnatural = 0,
             eternal = 0,
             respect = 0,
@@ -14,7 +14,7 @@ SMODS.Joker{ --Code Corruption
         ['text'] = {
             [1] = '{C:inactive,s:3}let\'s see if this works...{}',
             [2] = '{s:0.8}When Blind selected, self-destructs and:',
-            [3] = '{}{C:green,s:0.8}1 in 40{} {s:0.8}chance to give a {C:dark_edition}Unnatural{} Joker',
+            [3] = '{}{C:green,s:0.8}1 in 25{} {s:0.8}chance to give a {C:dark_edition}Unnatural{} Joker',
             [4] = '{s:0.8}If chance fails, create an {}{C:dark_edition}Eternal{} Cursed Joker{}',
             [5] = '{C:inactive}(Requires room){}'
         },
@@ -23,7 +23,7 @@ SMODS.Joker{ --Code Corruption
         }
     },
     pos = {
-        x = 9,
+        x = 8,
         y = 2
     },
     display_size = {
@@ -86,7 +86,7 @@ SMODS.Joker{ --Code Corruption
                     local joker_card = SMODS.add_card({ set = 'Joker', rarity = 'sauce_cursed' })
                     if joker_card then
                         
-                        joker_card:add_sticker('eternal', true)
+                        
                     end
                     G.GAME.joker_buffer = 0
                     return true
