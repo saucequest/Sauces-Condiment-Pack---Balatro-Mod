@@ -2,23 +2,23 @@ SMODS.Joker{ --Ripoff Cryptid Membership Card
     key = "ripoffcryptidmembershipcard",
     config = {
         extra = {
-            Xmult = 18.4
+            Xmult = 2.33
         }
     },
     loc_txt = {
         ['name'] = 'Ripoff Cryptid Membership Card',
         ['text'] = {
             [1] = '{X:red,C:white}X0.01{} Mult for every mention of Cryptid in',
-            [2] = 'the JokerForge Discord {C:inactive}(as of 9/7/2025){}',
-            [3] = '{C:inactive}(Currently{} {X:mult,C:white}x1.93{} {C:inactive}Mult){}'
+            [2] = 'the JokerForge Discord {C:inactive}(as of 9/8/2025){}',
+            [3] = '{C:inactive}(Currently{} {X:mult,C:white}x2.33{} {C:inactive}Mult){}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 6,
-        y = 10
+        x = 1,
+        y = 11
     },
     display_size = {
         w = 71 * 1, 
