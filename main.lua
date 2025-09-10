@@ -154,6 +154,17 @@ SMODS.ObjectType({
 })
 
 SMODS.ObjectType({
+    key = "sauce_sauce_jokers",
+    cards = {
+        ["j_sauce_averagejokerforgejoker"] = true,
+        ["j_sauce_averagevanillajokerforgejoker"] = true,
+        ["j_sauce_cementful"] = true,
+        ["j_sauce_chubbybabychubbybabysocute"] = true,
+        ["j_sauce_howoldareyou"] = true
+    },
+})
+
+SMODS.ObjectType({
     key = "sauce_shed",
     cards = {
         ["j_sauce_averageshedletskyplayer"] = true,

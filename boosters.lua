@@ -195,7 +195,7 @@ SMODS.Booster {
         },
         group_name = "Shedletsky Pack"
     },
-    config = { extra = 3, choose = 1 },
+    config = { extra = 3, choose = 6 },
     cost = 6,
     atlas = "CustomBoosters",
     pos = { x = 3, y = 0 },
