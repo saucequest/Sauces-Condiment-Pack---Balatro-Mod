@@ -7,7 +7,7 @@
   "description": "Crappy mod made in JokerForge with Cryptid-level balancing\n\nCredits to all the creators of the content the mod references and uses images from! \nPS. Some textures are currently placeholders",
   "prefix": "sauce",
   "main_file": "main.lua",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "priority": 0,
   "badge_colour": "666668",
   "badge_text_colour": "FFFFFF",
