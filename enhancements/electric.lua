@@ -1,0 +1,42 @@
+
+SMODS.Enhancement {
+    key = 'electric',
+    pos = { x = 6, y = 0 },
+    config = {
+        extra = {
+            xchips0 = 1.3,
+            xchips = 1.5
+        }
+    },
+    loc_txt = {
+        name = 'Electric',
+        text = {
+            [1] = 'When scored, gives {X:chips,C:white}X1.3{} Chips',
+            [2] = 'If scored in the first hand',
+            [3] = 'of the round, gives {X:chips,C:white}X1.5{} Chips',
+            [4] = ''
+        }
+    },
+    atlas = 'CustomEnhancements',
+    any_suit = true,
+    replace_base_card = false,
+    no_rank = false,
+    no_suit = false,
+    always_scores = false,
+    unlocked = true,
+    discovered = true,
+    no_collection = false,
+    weight = 5,
+    calculate = function(self, card, context)
+        if context.main_scoring and context.cardarea == G.play then
+            return {
+                x_chips = 1.3
+            }
+        end
+        if context.main_scoring and context.cardarea == G.play and G.GAME.current_round.hands_played == 0 then
+            return {
+                x_chips = 1.5
+            }
+        end
+    end
+}
