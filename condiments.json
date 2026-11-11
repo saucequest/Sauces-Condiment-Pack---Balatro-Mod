@@ -1,0 +1,18 @@
+{
+  "id": "condiments",
+  "name": "Sauce's Condiment Pack",
+  "author": [
+    "SauceQuest31"
+  ],
+  "description": "Crappy mod made in JokerForge with Cryptid-level balancing\n\nCredits to all the creators of the content the mod references and uses images from! \nPS. Some textures are currently placeholders",
+  "prefix": "sauce",
+  "main_file": "main.lua",
+  "version": "10.1.0",
+  "priority": -6.94202764e+21,
+  "badge_colour": "FFDB58",
+  "badge_text_colour": "d81616",
+  "dependencies": [
+    "Steamodded (>=1.0.0~BETA-0711a)",
+    "Talisman"
+  ]
+}
